@@ -1,0 +1,1 @@
+import{A as e}from"./floating-vue.C0YPAX_q.js";function t(t,n,r){let i=e(t,n,r);if(i===void 0)throw Error(`Could not resolve ${t.description}`);return i}export{t};

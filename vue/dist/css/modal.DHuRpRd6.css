@@ -1,0 +1,1 @@
+.pockets-modal{position:fixed;inset:0}.pockets-modal:before{background:var(--overlay,#00000080);content:"";position:absolute;inset:0}.pockets-modal>*{position:relative}

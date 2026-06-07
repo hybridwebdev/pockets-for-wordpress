@@ -1,0 +1,1 @@
+import{n as e}from"./floating-vue.C0YPAX_q.js";var t={...e,name:`pockets-popper`};export{t as default};

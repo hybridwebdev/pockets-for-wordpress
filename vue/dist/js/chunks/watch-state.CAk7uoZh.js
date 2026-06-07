@@ -1,0 +1,1 @@
+import{E as e,et as t,q as n}from"./floating-vue.C0YPAX_q.js";var r=e({__name:`index`,props:{source:{},callback:{},deep:{type:Boolean,default:!1},immediate:{type:Boolean,default:!1}},setup(e){let r=e;return t(typeof r.source==`function`?r.source:()=>r.source,(e,t)=>r.callback(e,t),{deep:r.deep,immediate:r.immediate}),(e,t)=>n(e.$slots,`default`)}});export{r as default};
