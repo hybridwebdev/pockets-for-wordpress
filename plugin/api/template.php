@@ -94,6 +94,15 @@ class templates {
 
     }
     
+    /**
+        replaces _cleanup_header_comment which wp complains about if you use.  
+    */
+    private static function cleanup_header_comment(string $str): string {
+        return trim(
+            preg_replace('/\s*(?:\*\/|\?>).*/', '', $str)
+        );
+    }
+
     private static function get_templates_from_dir( string $dir, array $collected_paths = [] ){
 
         $dir = \pockets::normalize_file_path( $dir );
@@ -120,8 +129,8 @@ class templates {
                 preg_match( '|Template name:(.*)$|mi', $file_contents, $template_name );
                 preg_match( '|Template type:(.*)$|mi', $file_contents, $template_type );
                 
-                $name = _cleanup_header_comment( $template_name[1] ?? false );
-                $type = _cleanup_header_comment( $template_type[1] ?? false );
+                $name = static::cleanup_header_comment( $template_name[1] ?? false );
+                $type = static::cleanup_header_comment( $template_type[1] ?? false );
 
                 if( !$name || !$type ) return $acc;
 

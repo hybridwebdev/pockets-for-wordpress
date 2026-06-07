@@ -1,0 +1,1 @@
+import{E as e,O as t,_t as n,q as r,yt as i}from"./floating-vue.C0YPAX_q.js";import{t as a}from"../pockets.glJnhv2z.js";var o=e({__name:`index`,setup(e){return(e,o)=>r(e.$slots,`default`,i(t(n(a).toast)))}});export{o as default};

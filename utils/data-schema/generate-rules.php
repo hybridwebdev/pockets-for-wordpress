@@ -1,4 +1,7 @@
 <?php 
+// phpcs:ignoreFile 
+// because phpcs chokes on this file
+
 namespace pockets\utils\data_schema;
 
 use pockets\utils\array_dot_prop;

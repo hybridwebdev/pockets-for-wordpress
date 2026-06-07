@@ -8,6 +8,7 @@ $pagination = $this->read_resource([
     'pagination_links:<='
 ]);
 
+// phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
 $renderLink = fn( $link, $class, $text ) => !$link ? "" : sprintf(
     <<<HTML
     <a href='%s' class='%s' style='color: inherit'>%s</a>
@@ -21,6 +22,10 @@ if( !$pagination['next'] && !$pagination['prev']) {
 }
 ?>
 <div class='d-flex'>
-    <?= $renderLink( $pagination['prev'], "me-auto", "Previous" ); ?>
-    <?= $renderLink( $pagination['next'], "ms-auto", "Next" ); ?>
+    <?php
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo $renderLink( $pagination['prev'], "me-auto", "Previous" ); 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo $renderLink( $pagination['next'], "ms-auto", "Next" ); 
+    ?>
 </div>

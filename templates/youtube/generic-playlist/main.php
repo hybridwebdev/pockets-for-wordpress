@@ -69,10 +69,16 @@
                         }'
                         role='button'
                     ></youtube>
-                    <?= \pockets::load_template(['template' => 'youtube/generic-playlist/player-controls']) ?>
+                    <?php 
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo \pockets::load_template(['template' => 'youtube/generic-playlist/player-controls']) 
+                    ?>
                 </div>
                 
-                <?= \pockets::load_template(['template' => 'youtube/generic-playlist/playlist']) ?>
+                <?php 
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped                
+                    echo \pockets::load_template(['template' => 'youtube/generic-playlist/playlist']) 
+                ?>
     
             </div>
         

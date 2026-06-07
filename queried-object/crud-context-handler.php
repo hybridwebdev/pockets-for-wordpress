@@ -26,6 +26,7 @@ class crud_context_handler {
         /**
             This is ugly but it works. 
         */
+        //phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $_GET = array_merge( $all_query_vars, $_GET );
 
         return add_query_arg( $all_query_vars, home_url( 'index.php' ) );

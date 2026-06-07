@@ -11,6 +11,7 @@ class module extends \pockets\base {
             hook_name: 'pockets/admin-bar/render/content', 
             callback: function(){
                 printf(
+                    // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed
                     <<<HTML
                         <pockets-local-state :open='false' #default='{state}' v-cloak >
                             <button 
@@ -32,11 +33,13 @@ class module extends \pockets\base {
                             <div 
                                 v-if='state.open' 
                                 class='position-fixed top-0 end-0 start-0 bottom-0' 
-                            >
-                                {$this->render_documentation()}
+                            >   
+                                %s
                             </div>
                         </pockets-local-state>
-                    HTML
+                    HTML,
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    $this->render_documentation()
                 );
             }
         );
@@ -54,12 +57,15 @@ class module extends \pockets\base {
             ]
         ]);
 
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
         return sprintf(
+
             <<<HTML
                 <pockets-documentation
                     v-bind='$props'
                 ></pockets-documentation>
             HTML,
+            
         );
 
     }

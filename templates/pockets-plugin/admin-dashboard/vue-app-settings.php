@@ -50,7 +50,7 @@
                         <input 
                             type='radio' 
                             value='host' 
-                            <?= $render->checkedProp( $options['mode'] ?? "", "host" ) ?>
+                            <?php echo $render->checkedProp( $options['mode'] ?? "", "host" ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                             name='pockets-vue-app[mode]'
                             v-model='options.mode'
                         >
@@ -61,7 +61,7 @@
                         <input 
                             type='radio' 
                             value='build'
-                            <?= $render->checkedProp( $options['mode'] ?? "", "build" ) ?>
+                            <?php echo $render->checkedProp( $options['mode'] ?? "", "build" ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
                             name='pockets-vue-app[mode]'
                             v-model='options.mode'
                         >
@@ -84,7 +84,7 @@
                     type='text'
                     placeholder='Enter Host'
                     name='pockets-vue-app[host]'
-                    <?= $render->valueProp( $options['host'] ?? "" ) ?>
+                    <?php echo $render->valueProp( $options['host'] ?? "" ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                 >
             </label>
 

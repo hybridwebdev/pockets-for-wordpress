@@ -67,7 +67,7 @@ class bootstrap_navwalker extends \Walker_Nav_Menu {
             $output     .= '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 
             if ( empty( $item->attr_title ) ) {
-                $atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
+                $atts['title'] = ! empty( $item->title ) ? wp_strip_all_tags( $item->title ) : '';
             } else {
                 $atts['title'] = $item->attr_title;
             }
@@ -180,12 +180,12 @@ class bootstrap_navwalker extends \Walker_Nav_Menu {
                 $output .= '<' . esc_attr( $container ) . ( $container_id ? ' id="' . esc_attr( $container_id ) . '"' : '' ) . ( $container_class ? ' class="' . esc_attr( $container_class ) . '"' : '' ) . '>';
             }
             $output .= '<ul' . ( $menu_id ? ' id="' . esc_attr( $menu_id ) . '"' : '' ) . ( $menu_class ? ' class="' . esc_attr( $menu_class ) . '"' : '' ) . '>';
-                $output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html__( 'Add a menu', 'fweb' ) . '</a></li>';
+                $output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html__( 'Add a menu', 'pockets' ) . '</a></li>';
             $output .= '</ul>';
             if ( $container ) {
                 $output .= '</' . esc_attr( $container ) . '>';
             }
-
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo $output;
         }
     }

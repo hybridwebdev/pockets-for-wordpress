@@ -2,14 +2,13 @@
 /*  
  * Plugin Name: Pockets Core    
  * Description: A powerful framework for wordpress. 
- * Version:     .99 
+ * Version:     0.99 
  * Author:      Hybrid Web Dev
- * Author URI:  hybridwebdev.com   
- * License:     Private
- * Requires PHP: 8 
- * Requires at least: 6    
+ * Author URI:  https://hybridwebdev.com   
+ * License:     GPLv2 or later
+ * Requires PHP: 8.0 
+ * Requires at least: 6.0    
  */ 
-
 namespace pockets {  
 
 	#[\AllowDynamicProperties]
@@ -63,3 +62,4 @@ namespace pockets {
   
 }; 
  
+  

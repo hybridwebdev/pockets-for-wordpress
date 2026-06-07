@@ -22,6 +22,7 @@ class load_assets {
 		add_filter('script_loader_tag', function ($tag, $handle, $src) {
 
 			if ( in_array( needle: $handle, haystack: [ 'vuejs-app' ] ) ) {
+				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
 				return '<script type="module" src="' . esc_url($src) . '"></script>';
 			}
 

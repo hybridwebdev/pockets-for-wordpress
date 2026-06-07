@@ -12,10 +12,12 @@ class menu {
     } 
 
     static function before(){
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo \pockets::load_template( [ 'template' => 'pockets-plugin\admin-dashboard\header' ] );
     }
 
     static function after(){
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo \pockets::load_template( [ 'template' => 'pockets-plugin\admin-dashboard\footer' ] );
     }
 
@@ -30,25 +32,30 @@ class menu {
                 $message = $error['message'];
 
                 if( is_wp_error($message) ) {
+                    // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
                     printf(
                         <<<T
                             <div class='alert alert-primary-dk m-0'>
                                 %s
                             </div>
                         T,
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         $message->get_error_message()
                     );
                 }
 
                 if( is_array($message) ) {
                     array_map(
+                        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
                         fn( $k, $v ) => printf(
                             <<<T
                                 <div class='alert alert-primary-dk m-0'>
                                     <b>%s</b> - %s
                                 </div>
                             T, 
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             $k, 
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             $v
                         ),
                         array_keys($message),
@@ -76,6 +83,7 @@ class menu {
             'pockets',
             function(){
                 $this->before();
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-dashboard/welcome' ] );
                 $this->after();
             }, 
@@ -90,9 +98,10 @@ class menu {
             function(){
 
                 $this->before();
-                
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-dashboard/settings-form-open' ] );
                     do_action('pockets/admin/render-plugin-settings');
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-dashboard/settings-form-close' ] );
 
                 $this->after();

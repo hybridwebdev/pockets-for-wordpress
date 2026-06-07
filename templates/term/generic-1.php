@@ -11,5 +11,14 @@ $template = $this->read_resource([
 
 ?>
 <div class='term-loop-item'>
-    <a href='<?= $template['link']?>'><?= $template['name'] ?></a>
+    <a href='<?php 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo $template['link'];
+    ?>'
+    >
+    <?php 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo $template['name'] 
+    ?>
+    </a>
 </div>

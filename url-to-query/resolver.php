@@ -152,7 +152,9 @@ class resolver {
         Parse the url to be resolved taking only relative part and stripping out query vars.
     */
     private function parseUrl( string $url = '', array $query_string_vars = [] ) {
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
         parse_str( parse_url( $url ?? "", PHP_URL_QUERY ) ?? "", $this->query_string );
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
         $request_uri = trim( parse_url( $url, PHP_URL_PATH ) ?? "", '/' );
         $this->request = trim( preg_replace( '#^/*index\.php#', '', $request_uri ), '/' );
         if ( ! empty( $query_string_vars ) ) {

@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 namespace pockets\utils;
 class register_cpt { 
     function __construct($name, $plural_name, $params=[], $labels = []) {

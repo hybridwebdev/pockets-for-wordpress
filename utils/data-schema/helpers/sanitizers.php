@@ -33,6 +33,7 @@ class sanitizers {
     }
 
     static function strip_tags( $value ) {
+        //phpcs:ignore WordPress.WP.AlternativeFunctions.strip_tags_strip_tags
         return strip_tags( $value );
     }
 

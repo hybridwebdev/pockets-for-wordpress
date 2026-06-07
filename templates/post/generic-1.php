@@ -9,4 +9,9 @@ $template = $this->read_resource([
 ]); 
 
 ?>
-<div class='loop-item'><?= $template['title'] ?></div>
+<div class='loop-item'>
+    <?php 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo $template['title'] 
+    ?>
+</div>

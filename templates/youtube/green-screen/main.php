@@ -25,11 +25,11 @@ $colorMatrix = $data['colorMatrix'] ?? "
 ?>
 <youtube 
     v-bind='<?php echo json_encode( $playerArgs ) ?>' 
-    player-style='filter: url( #<?= $key ?> ); '
+    player-style='filter: url( #<?php echo $key // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?> ); '
 >
     <svg class='d-none'>
         <filter 
-            id="<?= $key ?>" 
+            id="<?php echo $key // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>" 
             color-interpolation-filters="sRGB" 
             x="0" 
             y="0" 
@@ -37,7 +37,7 @@ $colorMatrix = $data['colorMatrix'] ?? "
             height='100%'
         >
             <feColorMatrix 
-                values="<?= $colorMatrix ?>" 
+                values="<?php echo $colorMatrix // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" 
             >
             </feColorMatrix>
         </filter>

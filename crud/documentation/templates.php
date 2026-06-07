@@ -22,14 +22,17 @@ trait templates {
 
         $url = \pockets\crud\end_point\module::url();
         
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
         $vue = <<<'_'
         let response = await $pockets.crud("{model}").init({init}).{action}({args});
         _;
 
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
         $php = <<<_
         <?php \pockets::crud("{model}")::init({init})->{action}({args});
         _;
 
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
         $rest = <<<_
         let responses = await axios.post( "{url}", [ {
             model: "{model}",

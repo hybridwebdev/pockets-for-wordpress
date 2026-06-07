@@ -33,7 +33,7 @@
                 type='text'
                 placeholder='Enter Url'
                 name='pockets-updater[url]'
-                <?= $render->valueProp($options['url']) ?>
+                <?php echo $render->valueProp($options['url']) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
             >
         </label>
 
@@ -48,7 +48,7 @@
                 type='password'
                 placeholder='Enter Token'
                 name='pockets-updater[token]'
-                <?= $render->valueProp($options['token']) ?>
+                <?php echo $render->valueProp($options['token']) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
             >
         </label>
         
@@ -66,7 +66,7 @@
                 min=60
                 placeholder='Enter expiration time'
                 name='pockets-updater[expirationTime]'
-                <?= $render->valueProp( $options['expirationTime'] ) ?>
+                <?php echo $render->valueProp( $options['expirationTime'] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
             >
         </label>
 

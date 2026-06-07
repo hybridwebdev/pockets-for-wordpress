@@ -57,6 +57,7 @@ namespace {
         }
 
         static function dump(mixed $data) {
+            // phpcs:ignore WordPress.PHP.DevelopmentFunctions
             var_dump("<pre>", $data, "</pre>");
         }
 

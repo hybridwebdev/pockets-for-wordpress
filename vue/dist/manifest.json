@@ -1,35 +1,4 @@
 {
-  "_@pockets-documentation.ChdbcYdb.css": {
-    "file": "css/@pockets-documentation.ChdbcYdb.css",
-    "src": "_@pockets-documentation.ChdbcYdb.css"
-  },
-  "_@pockets-documentation.wLZgB_HN.js": {
-    "file": "js/chunks/@pockets-documentation.wLZgB_HN.js",
-    "name": "@pockets-documentation",
-    "imports": [
-      "__plugin-vue_export-helper.DQ2ZEX90.js",
-      "_rolldown-runtime.BXA48FBR.js",
-      "src/main.ts",
-      "_floating-vue.C0YPAX_q.js",
-      "_lodash.CvCKdjmd.js",
-      "_vanilla-jsoneditor.Cc3nTmEV.js",
-      "_vue-router.CBgZkhbh.js",
-      "_inject-strict.QDOm0acR.js",
-      "_context.880zSjeH.js"
-    ],
-    "css": [
-      "css/@pockets-documentation.ChdbcYdb.css"
-    ]
-  },
-  "_@pockets-node-tree.BscDf0wO.js": {
-    "file": "js/chunks/@pockets-node-tree.BscDf0wO.js",
-    "name": "@pockets-node-tree",
-    "imports": [
-      "src/main.ts",
-      "_floating-vue.C0YPAX_q.js",
-      "_utils.DB8FV-RJ.js"
-    ]
-  },
   "__plugin-vue_export-helper.DQ2ZEX90.js": {
     "file": "js/chunks/_plugin-vue_export-helper.DQ2ZEX90.js",
     "name": "_plugin-vue_export-helper"
@@ -45,19 +14,19 @@
       "_rolldown-runtime.BXA48FBR.js"
     ]
   },
-  "_base.CQvPv3MZ.js": {
-    "file": "js/chunks/base.CQvPv3MZ.js",
+  "_base.CpPYRH07.js": {
+    "file": "js/chunks/base.CpPYRH07.js",
     "name": "base",
     "imports": [
-      "__plugin-vue_export-helper.DQ2ZEX90.js",
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js"
     ]
   },
-  "_base.ZCsi2Fn8.js": {
-    "file": "js/chunks/base.ZCsi2Fn8.js",
+  "_base.DBx0h2v3.js": {
+    "file": "js/chunks/base.DBx0h2v3.js",
     "name": "base",
     "imports": [
+      "__plugin-vue_export-helper.DQ2ZEX90.js",
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js"
     ]
@@ -85,6 +54,16 @@
       "_inject-strict.QDOm0acR.js"
     ]
   },
+  "_context.C8Bv8mzG.js": {
+    "file": "js/chunks/context.C8Bv8mzG.js",
+    "name": "context",
+    "imports": [
+      "_rolldown-runtime.BXA48FBR.js",
+      "src/main.ts",
+      "_floating-vue.C0YPAX_q.js",
+      "_inject-strict.QDOm0acR.js"
+    ]
+  },
   "_context.C_2e_gFT.js": {
     "file": "js/chunks/context.C_2e_gFT.js",
     "name": "context",
@@ -97,16 +76,6 @@
     "file": "js/chunks/context.C_Lwpoev.js",
     "name": "context",
     "imports": [
-      "_floating-vue.C0YPAX_q.js",
-      "_inject-strict.QDOm0acR.js"
-    ]
-  },
-  "_context.ClB_ebWn.js": {
-    "file": "js/chunks/context.ClB_ebWn.js",
-    "name": "context",
-    "imports": [
-      "_rolldown-runtime.BXA48FBR.js",
-      "src/main.ts",
       "_floating-vue.C0YPAX_q.js",
       "_inject-strict.QDOm0acR.js"
     ]
@@ -156,12 +125,8 @@
       "_inject-strict.QDOm0acR.js"
     ]
   },
-  "_highlight.ByRCvXUQ.css": {
-    "file": "css/highlight.ByRCvXUQ.css",
-    "src": "_highlight.ByRCvXUQ.css"
-  },
-  "_highlight.js.CS40hBcy.js": {
-    "file": "js/chunks/highlight.js.CS40hBcy.js",
+  "_highlight-js.CVy-v6ti.js": {
+    "file": "js/chunks/highlight-js.CVy-v6ti.js",
     "name": "highlight.js",
     "imports": [
       "src/main.ts",
@@ -170,6 +135,10 @@
     "css": [
       "css/highlight.ByRCvXUQ.css"
     ]
+  },
+  "_highlight.ByRCvXUQ.css": {
+    "file": "css/highlight.ByRCvXUQ.css",
+    "src": "_highlight.ByRCvXUQ.css"
   },
   "_inject-strict.QDOm0acR.js": {
     "file": "js/chunks/inject-strict.QDOm0acR.js",
@@ -189,15 +158,15 @@
     "file": "css/loader.BBm-P0p3.css",
     "src": "_loader.BBm-P0p3.css"
   },
-  "_loader.G1lxNBIl.js": {
-    "file": "js/chunks/loader.G1lxNBIl.js",
+  "_loader.ChJFkPZQ.js": {
+    "file": "js/chunks/loader.ChJFkPZQ.js",
     "name": "loader",
     "imports": [
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "_rolldown-runtime.BXA48FBR.js",
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js",
-      "_@pockets-node-tree.BscDf0wO.js",
+      "_pockets-node-tree.BKZcI_BO.js",
       "_injection-key.DLHoB454.js"
     ],
     "css": [
@@ -211,23 +180,54 @@
       "_rolldown-runtime.BXA48FBR.js"
     ]
   },
-  "_node-selector.BCQw6aUB.js": {
-    "file": "js/chunks/node-selector.BCQw6aUB.js",
+  "_node-selector.C3F2YXWb.css": {
+    "file": "css/node-selector.C3F2YXWb.css",
+    "src": "_node-selector.C3F2YXWb.css"
+  },
+  "_node-selector.Dli7-OGu.js": {
+    "file": "js/chunks/node-selector.Dli7-OGu.js",
     "name": "node-selector",
     "imports": [
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js",
       "_lodash.CvCKdjmd.js",
-      "_@pockets-node-tree.BscDf0wO.js"
+      "_pockets-node-tree.BKZcI_BO.js"
     ],
     "css": [
       "css/node-selector.C3F2YXWb.css"
     ]
   },
-  "_node-selector.C3F2YXWb.css": {
-    "file": "css/node-selector.C3F2YXWb.css",
-    "src": "_node-selector.C3F2YXWb.css"
+  "_pockets-documentation.ChdbcYdb.css": {
+    "file": "css/pockets-documentation.ChdbcYdb.css",
+    "src": "_pockets-documentation.ChdbcYdb.css"
+  },
+  "_pockets-documentation.DprZIrF0.js": {
+    "file": "js/chunks/pockets-documentation.DprZIrF0.js",
+    "name": "@pockets-documentation",
+    "imports": [
+      "__plugin-vue_export-helper.DQ2ZEX90.js",
+      "_rolldown-runtime.BXA48FBR.js",
+      "src/main.ts",
+      "_floating-vue.C0YPAX_q.js",
+      "_lodash.CvCKdjmd.js",
+      "_vanilla-jsoneditor.Cc3nTmEV.js",
+      "_vue-router.CBgZkhbh.js",
+      "_inject-strict.QDOm0acR.js",
+      "_context.880zSjeH.js"
+    ],
+    "css": [
+      "css/pockets-documentation.ChdbcYdb.css"
+    ]
+  },
+  "_pockets-node-tree.BKZcI_BO.js": {
+    "file": "js/chunks/pockets-node-tree.BKZcI_BO.js",
+    "name": "@pockets-node-tree",
+    "imports": [
+      "src/main.ts",
+      "_floating-vue.C0YPAX_q.js",
+      "_utils.DB8FV-RJ.js"
+    ]
   },
   "_rolldown-runtime.BXA48FBR.js": {
     "file": "js/chunks/rolldown-runtime.BXA48FBR.js",
@@ -241,8 +241,8 @@
       "_context.C_2e_gFT.js"
     ]
   },
-  "_use-shared.BYq_-4yY.js": {
-    "file": "js/chunks/use-shared.BYq_-4yY.js",
+  "_use-shared.t_Kh42lc.js": {
+    "file": "js/chunks/use-shared.t_Kh42lc.js",
     "name": "use-shared",
     "imports": [
       "src/main.ts",
@@ -305,21 +305,21 @@
     ]
   },
   "packages/@pockets-components/UX/code-block/index.vue": {
-    "file": "js/chunks/code-block.nvODud_p.js",
+    "file": "js/chunks/code-block.B2ypv1xA.js",
     "name": "code-block",
     "src": "packages/@pockets-components/UX/code-block/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "_floating-vue.C0YPAX_q.js",
-      "_highlight.js.CS40hBcy.js"
+      "_highlight-js.CVy-v6ti.js"
     ],
     "css": [
       "css/code-block.LF90hucc.css"
     ]
   },
   "packages/@pockets-components/UX/code-editor/index.vue": {
-    "file": "js/chunks/code-editor.BVdvi4dP.js",
+    "file": "js/chunks/code-editor.DUsqV6Dt.js",
     "name": "code-editor",
     "src": "packages/@pockets-components/UX/code-editor/index.vue",
     "isDynamicEntry": true,
@@ -350,7 +350,7 @@
     ]
   },
   "packages/@pockets-components/UX/copy/index.vue": {
-    "file": "js/chunks/copy.BBT7Unkv.js",
+    "file": "js/chunks/copy.F7SY3-4_.js",
     "name": "copy",
     "src": "packages/@pockets-components/UX/copy/index.vue",
     "isDynamicEntry": true,
@@ -360,7 +360,7 @@
     ]
   },
   "packages/@pockets-components/UX/fancy-input/index.vue": {
-    "file": "js/chunks/fancy-input.DKybiS7K.js",
+    "file": "js/chunks/fancy-input.DtO56hye.js",
     "name": "fancy-input",
     "src": "packages/@pockets-components/UX/fancy-input/index.vue",
     "isDynamicEntry": true,
@@ -384,7 +384,7 @@
     ]
   },
   "packages/@pockets-components/UX/fancy-select/components/select.vue": {
-    "file": "js/chunks/select.Du4Phm8i.js",
+    "file": "js/chunks/select.D6feYdET.js",
     "name": "select",
     "src": "packages/@pockets-components/UX/fancy-select/components/select.vue",
     "isDynamicEntry": true,
@@ -399,66 +399,66 @@
     ]
   },
   "packages/@pockets-components/UX/fonts/family.ts": {
-    "file": "js/chunks/family.BonQ0Z56.js",
+    "file": "js/chunks/family.DUugHuDE.js",
     "name": "family",
     "src": "packages/@pockets-components/UX/fonts/family.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_base.CQvPv3MZ.js"
+      "_base.DBx0h2v3.js"
     ]
   },
   "packages/@pockets-components/UX/fonts/style.ts": {
-    "file": "js/chunks/style.CZlMfdbs.js",
+    "file": "js/chunks/style.lV7tdOwC.js",
     "name": "style",
     "src": "packages/@pockets-components/UX/fonts/style.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_base.CQvPv3MZ.js"
+      "_base.DBx0h2v3.js"
     ]
   },
   "packages/@pockets-components/UX/fonts/weight.ts": {
-    "file": "js/chunks/weight.p1lpn7GN.js",
+    "file": "js/chunks/weight.DseJpHaS.js",
     "name": "weight",
     "src": "packages/@pockets-components/UX/fonts/weight.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_base.CQvPv3MZ.js"
+      "_base.DBx0h2v3.js"
     ]
   },
   "packages/@pockets-components/UX/form/components/container.vue": {
-    "file": "js/chunks/container.zc0jL3hU.js",
+    "file": "js/chunks/container.DE3aqCGc.js",
     "name": "container",
     "src": "packages/@pockets-components/UX/form/components/container.vue",
     "isDynamicEntry": true,
     "imports": [
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js",
-      "_use-shared.BYq_-4yY.js"
+      "_use-shared.t_Kh42lc.js"
     ]
   },
   "packages/@pockets-components/UX/form/components/input.vue": {
-    "file": "js/chunks/input.Su2UGHaB.js",
+    "file": "js/chunks/input.zqKorU54.js",
     "name": "input",
     "src": "packages/@pockets-components/UX/form/components/input.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
       "_utils.DB8FV-RJ.js",
-      "_use-shared.BYq_-4yY.js"
+      "_use-shared.t_Kh42lc.js"
     ]
   },
   "packages/@pockets-components/UX/form/components/validation.vue": {
-    "file": "js/chunks/validation.DL-0a-91.js",
+    "file": "js/chunks/validation.DdBaVTAa.js",
     "name": "validation",
     "src": "packages/@pockets-components/UX/form/components/validation.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
-      "_use-shared.BYq_-4yY.js"
+      "_use-shared.t_Kh42lc.js"
     ]
   },
   "packages/@pockets-components/UX/json-editor/loader.vue": {
-    "file": "js/chunks/loader.2qq3P0A7.js",
+    "file": "js/chunks/loader.DiOVeGgq.js",
     "name": "loader",
     "src": "packages/@pockets-components/UX/json-editor/loader.vue",
     "isDynamicEntry": true,
@@ -473,7 +473,7 @@
     ]
   },
   "packages/@pockets-components/UX/moveable/index.vue": {
-    "file": "js/chunks/moveable.Cim1x80f.js",
+    "file": "js/chunks/moveable.CKO8iqSg.js",
     "name": "moveable",
     "src": "packages/@pockets-components/UX/moveable/index.vue",
     "isDynamicEntry": true,
@@ -495,7 +495,7 @@
     ]
   },
   "packages/@pockets-components/UX/range-slider/index.vue": {
-    "file": "js/chunks/range-slider.BF0luFjY.js",
+    "file": "js/chunks/range-slider.BpryFzY-.js",
     "name": "range-slider",
     "src": "packages/@pockets-components/UX/range-slider/index.vue",
     "isDynamicEntry": true,
@@ -510,7 +510,7 @@
     ]
   },
   "packages/@pockets-components/UX/repeater/loader/loader.vue": {
-    "file": "js/chunks/loader.DZySMpBv.js",
+    "file": "js/chunks/loader.Brtd7Xcx.js",
     "name": "loader",
     "src": "packages/@pockets-components/UX/repeater/loader/loader.vue",
     "isDynamicEntry": true,
@@ -526,7 +526,7 @@
     ]
   },
   "packages/@pockets-components/UX/selectable-tags/index.vue": {
-    "file": "js/chunks/selectable-tags.BFSff70j.js",
+    "file": "js/chunks/selectable-tags.BpcMR-Oe.js",
     "name": "selectable-tags",
     "src": "packages/@pockets-components/UX/selectable-tags/index.vue",
     "isDynamicEntry": true,
@@ -545,7 +545,7 @@
     ]
   },
   "packages/@pockets-components/UX/state-containers/components/subscribe-data.vue": {
-    "file": "js/chunks/subscribe-data.DOigOwv3.js",
+    "file": "js/chunks/subscribe-data.P1dszbsi.js",
     "name": "subscribe-data",
     "src": "packages/@pockets-components/UX/state-containers/components/subscribe-data.vue",
     "isDynamicEntry": true,
@@ -564,7 +564,7 @@
     ]
   },
   "packages/@pockets-components/UX/time-input/index.vue": {
-    "file": "js/chunks/time-input.FmVV77CI.js",
+    "file": "js/chunks/time-input.D8IXMku1.js",
     "name": "time-input",
     "src": "packages/@pockets-components/UX/time-input/index.vue",
     "isDynamicEntry": true,
@@ -577,7 +577,7 @@
     ]
   },
   "packages/@pockets-components/UX/wp-object-selector/index.vue": {
-    "file": "js/chunks/wp-object-selector.BJWmgjes.js",
+    "file": "js/chunks/wp-object-selector.0wlHn7jJ.js",
     "name": "wp-object-selector",
     "src": "packages/@pockets-components/UX/wp-object-selector/index.vue",
     "isDynamicEntry": true,
@@ -585,7 +585,7 @@
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "_floating-vue.C0YPAX_q.js",
       "_utils.DB8FV-RJ.js",
-      "_base.ZCsi2Fn8.js",
+      "_base.CpPYRH07.js",
       "_array.CT1YYZs0.js",
       "_inject-strict.QDOm0acR.js"
     ],
@@ -627,7 +627,7 @@
     ]
   },
   "packages/@pockets-components/accordion/components/container.vue": {
-    "file": "js/chunks/container.BPT0Sujh.js",
+    "file": "js/chunks/container.BgrJL3sN.js",
     "name": "container",
     "src": "packages/@pockets-components/accordion/components/container.vue",
     "isDynamicEntry": true,
@@ -780,17 +780,17 @@
     ]
   },
   "packages/@pockets-components/render-markdown/index.vue": {
-    "file": "js/chunks/render-markdown.Iwpl82OF.js",
+    "file": "js/chunks/render-markdown.B1_i5GpY.js",
     "name": "render-markdown",
     "src": "packages/@pockets-components/render-markdown/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
-      "_highlight.js.CS40hBcy.js"
+      "_highlight-js.CVy-v6ti.js"
     ]
   },
   "packages/@pockets-components/slider/components/container.vue": {
-    "file": "js/chunks/container.BGzGHIVm.js",
+    "file": "js/chunks/container.CQpTGtiK.js",
     "name": "container",
     "src": "packages/@pockets-components/slider/components/container.vue",
     "isDynamicEntry": true,
@@ -826,7 +826,7 @@
     ]
   },
   "packages/@pockets-components/toast/index.vue": {
-    "file": "js/chunks/toast.B56WZ4JT.js",
+    "file": "js/chunks/toast.C4q3SkJU.js",
     "name": "toast",
     "src": "packages/@pockets-components/toast/index.vue",
     "isDynamicEntry": true,
@@ -854,18 +854,18 @@
     ]
   },
   "packages/@pockets-components/youtube/components/play-list/index.vue": {
-    "file": "js/chunks/play-list.DdSozlrD.js",
+    "file": "js/chunks/play-list.BH47Kqqy.js",
     "name": "play-list",
     "src": "packages/@pockets-components/youtube/components/play-list/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
-      "_context.ClB_ebWn.js",
+      "_context.C8Bv8mzG.js",
       "_array.CT1YYZs0.js"
     ]
   },
   "packages/@pockets-components/youtube/components/player/index.vue": {
-    "file": "js/chunks/player.DwkwerMK.js",
+    "file": "js/chunks/player.Bq-sZ2y2.js",
     "name": "player",
     "src": "packages/@pockets-components/youtube/components/player/index.vue",
     "isDynamicEntry": true,
@@ -873,7 +873,7 @@
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js",
-      "_context.ClB_ebWn.js"
+      "_context.C8Bv8mzG.js"
     ],
     "css": [
       "css/player.B7sqp2_c.css"
@@ -889,17 +889,17 @@
     ]
   },
   "packages/@pockets-core/crud/component/index.vue": {
-    "file": "js/chunks/component.CvTkLe-P.js",
+    "file": "js/chunks/component.uC-Bvazr.js",
     "name": "component",
     "src": "packages/@pockets-core/crud/component/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
-      "_base.ZCsi2Fn8.js"
+      "_base.CpPYRH07.js"
     ]
   },
   "packages/@pockets-directives/click-outside/index.ts": {
-    "file": "js/chunks/click-outside.BOMXG95L.js",
+    "file": "js/chunks/click-outside.B0NYkRLx.js",
     "name": "click-outside",
     "src": "packages/@pockets-directives/click-outside/index.ts",
     "isDynamicEntry": true,
@@ -909,7 +909,7 @@
     ]
   },
   "packages/@pockets-directives/debounce/index.ts": {
-    "file": "js/chunks/debounce.rHD6GJd2.js",
+    "file": "js/chunks/debounce.DrVMKhSC.js",
     "name": "debounce",
     "src": "packages/@pockets-directives/debounce/index.ts",
     "isDynamicEntry": true,
@@ -918,18 +918,18 @@
     ]
   },
   "packages/@pockets-documentation/components/router/index.vue": {
-    "file": "js/chunks/router.DSIE6k9C.js",
+    "file": "js/chunks/router.B0L5G7fR.js",
     "name": "router",
     "src": "packages/@pockets-documentation/components/router/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
-      "_@pockets-documentation.wLZgB_HN.js",
+      "_pockets-documentation.DprZIrF0.js",
       "_context.880zSjeH.js"
     ]
   },
   "packages/@pockets-documentation/components/story-demo-container/index.vue": {
-    "file": "js/chunks/story-demo-container.BjW_zk29.js",
+    "file": "js/chunks/story-demo-container.C813kXwQ.js",
     "name": "story-demo-container",
     "src": "packages/@pockets-documentation/components/story-demo-container/index.vue",
     "isDynamicEntry": true,
@@ -940,7 +940,7 @@
     ]
   },
   "packages/@pockets-documentation/components/story-demo/index.vue": {
-    "file": "js/chunks/story-demo.CeWzSjIS.js",
+    "file": "js/chunks/story-demo.Ci7qy8fC.js",
     "name": "story-demo",
     "src": "packages/@pockets-documentation/components/story-demo/index.vue",
     "isDynamicEntry": true,
@@ -948,7 +948,7 @@
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "src/main.ts",
       "_floating-vue.C0YPAX_q.js",
-      "_@pockets-documentation.wLZgB_HN.js",
+      "_pockets-documentation.DprZIrF0.js",
       "_lodash.CvCKdjmd.js",
       "_vue-router.CBgZkhbh.js",
       "_context.880zSjeH.js"
@@ -958,14 +958,14 @@
     ]
   },
   "packages/@pockets-documentation/components/story-iframe/index.vue": {
-    "file": "js/chunks/story-iframe.BBM7yj9k.js",
+    "file": "js/chunks/story-iframe.BKhttzHP.js",
     "name": "story-iframe",
     "src": "packages/@pockets-documentation/components/story-iframe/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "_floating-vue.C0YPAX_q.js",
-      "_@pockets-documentation.wLZgB_HN.js",
+      "_pockets-documentation.DprZIrF0.js",
       "_context.880zSjeH.js"
     ],
     "css": [
@@ -973,19 +973,19 @@
     ]
   },
   "packages/@pockets-node-tree/components/pockets-html/index.vue": {
-    "file": "js/chunks/pockets-html.Dynbo1Q2.js",
+    "file": "js/chunks/pockets-html.Bfa9QpNi.js",
     "name": "pockets-html",
     "src": "packages/@pockets-node-tree/components/pockets-html/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "__plugin-vue_export-helper.DQ2ZEX90.js",
       "_floating-vue.C0YPAX_q.js",
-      "_@pockets-node-tree.BscDf0wO.js",
+      "_pockets-node-tree.BKZcI_BO.js",
       "_injection-key.DLHoB454.js"
     ]
   },
   "packages/@pockets-node-tree/components/tree-router-view/index.vue": {
-    "file": "js/chunks/tree-router-view.C_Uo8y9v.js",
+    "file": "js/chunks/tree-router-view.D6tFtKiv.js",
     "name": "tree-router-view",
     "src": "packages/@pockets-node-tree/components/tree-router-view/index.vue",
     "isDynamicEntry": true,
@@ -996,7 +996,7 @@
     ]
   },
   "packages/@pockets-node-tree/editor/index.vue": {
-    "file": "js/chunks/editor.Dly8lMIj.js",
+    "file": "js/chunks/editor.COVypYTn.js",
     "name": "editor",
     "src": "packages/@pockets-node-tree/editor/index.vue",
     "isDynamicEntry": true,
@@ -1006,24 +1006,24 @@
       "_floating-vue.C0YPAX_q.js",
       "_utils.DB8FV-RJ.js",
       "_inject-strict.QDOm0acR.js",
-      "_@pockets-node-tree.BscDf0wO.js",
-      "_node-selector.BCQw6aUB.js",
-      "_loader.G1lxNBIl.js"
+      "_pockets-node-tree.BKZcI_BO.js",
+      "_node-selector.Dli7-OGu.js",
+      "_loader.ChJFkPZQ.js"
     ],
     "css": [
       "css/editor.DEF2k97J.css"
     ]
   },
   "packages/@pockets-node-tree/editor/sections/node-list/schema-selector.vue": {
-    "file": "js/chunks/schema-selector.BG6hL5P1.js",
+    "file": "js/chunks/schema-selector.CBrTNjLE.js",
     "name": "schema-selector",
     "src": "packages/@pockets-node-tree/editor/sections/node-list/schema-selector.vue",
     "isDynamicEntry": true,
     "imports": [
       "_floating-vue.C0YPAX_q.js",
       "_lodash.CvCKdjmd.js",
-      "_@pockets-node-tree.BscDf0wO.js",
-      "_node-selector.BCQw6aUB.js"
+      "_pockets-node-tree.BKZcI_BO.js",
+      "_node-selector.Dli7-OGu.js"
     ]
   },
   "packages/@pockets-router/context/index.vue": {
@@ -1077,7 +1077,7 @@
     ]
   },
   "packages/@pockets-tip-tap/components/editor/index.vue": {
-    "file": "js/chunks/editor.CwDQuMKI.js",
+    "file": "js/chunks/editor.ghn1zNg_.js",
     "name": "editor",
     "src": "packages/@pockets-tip-tap/components/editor/index.vue",
     "isDynamicEntry": true,
@@ -1091,7 +1091,7 @@
     ]
   },
   "packages/@pockets-woo/cart/wrapper.vue": {
-    "file": "js/chunks/wrapper.qDfAmqgn.js",
+    "file": "js/chunks/wrapper.DCSHB318.js",
     "name": "wrapper",
     "src": "packages/@pockets-woo/cart/wrapper.vue",
     "isDynamicEntry": true,
@@ -1101,7 +1101,7 @@
     ]
   },
   "src/main.ts": {
-    "file": "js/pockets.DScGkKOo.js",
+    "file": "js/pockets.glJnhv2z.js",
     "name": "pockets",
     "src": "src/main.ts",
     "isEntry": true,
@@ -1176,7 +1176,7 @@
       "packages/@pockets-node-tree/components/tree-router-view/index.vue",
       "packages/@pockets-node-tree/editor/sections/node-list/schema-selector.vue",
       "packages/@pockets-node-tree/editor/index.vue",
-      "_loader.G1lxNBIl.js",
+      "_loader.ChJFkPZQ.js",
       "packages/@pockets-router/context/index.vue",
       "packages/@pockets-router/link/index.vue",
       "packages/@pockets-router/router/index.vue",

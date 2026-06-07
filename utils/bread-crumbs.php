@@ -148,9 +148,7 @@ class bread_crumbs {
             unset( $this->breadcrumb['home'] );
         }
 
-        return sprintf(<<<T
-            %s
-        T, (string) implode( $this->options['separator'], $this->breadcrumb ) );
+        return sprintf( "%s", (string) implode( $this->options['separator'], $this->breadcrumb ) );
 
 	}
 

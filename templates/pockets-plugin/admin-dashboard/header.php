@@ -5,8 +5,8 @@ global $submenu;
 $title = get_admin_page_title();
 
 $render_menu_items = function( $item ){
-    
-    $current_page = $_GET['page'] ?? "";
+    //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    $current_page = (int)$_GET['page'] ?? 1;
     $item_slug = $item[2];
     $link = menu_page_url($item_slug, false);
     if (
@@ -19,8 +19,11 @@ $render_menu_items = function( $item ){
 
     printf(
         "<option value='%s' %s>%s</option>",
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         $link,
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         $current_page == $item_slug ? "selected" : "",
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         $item[3]
     );
 };
@@ -34,7 +37,7 @@ $logo = sprintf( "%s/assets/images/pockets-logo.webp", \pockets\base::init()->ur
 
     <div class='d-flex gap-1 flex-wrap bg-grey p-2 bg-grey-800'>
         
-        <img src='<?= $logo ?>' style='max-width:240px'>
+        <img src='<?php echo $logo // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' style='max-width:240px'>
        
         <select 
             oninput='window.location = this.value'

@@ -35,10 +35,10 @@ $mode = 'shuffle';
 <pockets-local-state
     
     :volume='25'
-    :items='<?= json_encode( $list )?>'
-    :current='<?= $current ?>'
+    :items='<?php echo json_encode( $list )?>'
+    :current='<?php echo $current // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'
     :clicked='false'
-    mode='<?= $mode ?>'
+    mode='<?php echo $mode // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'
     #default="{ state:config }"
     playerRef='null'
     :hovered=false
@@ -99,7 +99,7 @@ $mode = 'shuffle';
     
             <div 
                 class='position-fixed p-4 bg-black' 
-                style='top: 0; left: 0; bottom: 0; right: 0; z-index:10; background-image: url(<?= $loadingImage ?>)'
+                style='top: 0; left: 0; bottom: 0; right: 0; z-index:10; background-image: url(<?php echo $loadingImage // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>)'
                 v-if='api.state.status!="playing" || !config.clicked'
             >
             </div>

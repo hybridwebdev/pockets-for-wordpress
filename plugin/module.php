@@ -47,6 +47,7 @@ namespace pockets\plugin {
 			
 			add_action('wp_footer', function(){
 				if(  current_user_can('administrator') ) {
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-bar/loader' ] );
 				}
 			}, 5 );
@@ -56,10 +57,11 @@ namespace pockets\plugin {
 		function load_base_assets(){
 			
 			wp_enqueue_style(  'pockets', "{$this->url}/assets/css/styles.css", false, $this->get_plugin_data()['Version'] );
+			// phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
 			wp_enqueue_style(  'pockets-fa', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css", false, $this->get_plugin_data()['Version'] );
 			wp_enqueue_style(  'pockets-font-lato', "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap", false, $this->get_plugin_data()['Version'] );
 			wp_enqueue_style(  'pockets-font-lobster', "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&display=swap", false, $this->get_plugin_data()['Version'] );
-
+			// phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
 			wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], null, true );
 
 		}

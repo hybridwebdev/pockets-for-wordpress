@@ -1,0 +1,1 @@
+import{t as e}from"./base.DBx0h2v3.js";var t={extends:e,setup:e.setup,props:{options:{default:[{text:`None`,value:void 0},{text:`Inter`,value:`Inter`}]}}};export{t as default};
