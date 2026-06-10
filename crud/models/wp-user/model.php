@@ -16,19 +16,17 @@ class model extends \pockets\crud\model {
         'properties' => [
             'input' => [
                 'type' => "object",
-                'required' => ['pass', "login", 'email'],
+                'required' => [ 'user_pass', "user_login", 'user_email' ],
             ],
         ],
     ])]
-    function create($input, $output = []){
-        
-        if( !$this->canCreate() ) return \pockets::error('Denied');
+    function create( $input, $output = [] ){
 
-        $ID = wp_insert_user( [
-            'user_pass' => "password",
-            'user_login' => "test-user-2",
-            "user_email" => "test@user2.com"
-        ] );
+        if( !$this->canCreate() ) {
+            return \pockets::error('Denied');
+        };
+ 
+        $ID = wp_insert_user( $input );
         
         if( is_wp_error( $ID ) ) {
             return $ID;

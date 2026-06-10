@@ -103,5 +103,23 @@ class test_wp_user extends test_model {
 
     }
 
+    
+    public function create( $model, $mock ){
+
+        /**
+            Have to add some additional write args because the create user
+            method needs them. 
+        */
+
+        $mock['write'] = array_merge( $mock['write'], [
+            'user_login' => $this->generateRandomString(),
+            'user_pass' => $this->generateRandomString(),
+            'user_email' => $mock['write']['email']
+        ] );
+
+        parent::create( $model, $mock );
+
+    }
+
 };
  
