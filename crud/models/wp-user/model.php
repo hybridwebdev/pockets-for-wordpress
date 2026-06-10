@@ -11,15 +11,7 @@ class model extends \pockets\crud\model {
     public string $get_resource      = __NAMESPACE__.'\get';
     public string $update_resource   = __NAMESPACE__.'\update';
     public string $read_resource     = __NAMESPACE__.'\read';
-
-    #[\pockets\crud\schema\attribute([
-        'properties' => [
-            'input' => [
-                'type' => "object",
-                'required' => [ 'user_pass', "user_login", 'user_email' ],
-            ],
-        ],
-    ])]
+     
     function create( $input, $output = [] ){
 
         if( !$this->canCreate() ) {
