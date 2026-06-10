@@ -11,7 +11,27 @@ class model extends \pockets\crud\model {
     public string $get_resource      = __NAMESPACE__.'\get';
     public string $update_resource   = __NAMESPACE__.'\update';
     public string $read_resource     = __NAMESPACE__.'\read';
-     
+
+    #[ \pockets\crud\schema\attribute( [
+        'type' => "object",
+        'properties' => [
+            'input' => [
+                '$ref' => '/reset',
+                '$merge' => [
+                    'source' => [ '$ref' => "/wp-user/update_resource/" ],
+                    'with' => [
+                        'type' => ['object', 'array', 'boolean'],
+                        'properties' => [
+                            'user_pass' => [ 'type' => 'string' ],
+                            'user_login' => [ 'type' => 'string' ],
+                            'user_email' => [ 'type' => 'string' ]
+                        ],
+                        'required' => ['user_pass', 'user_login','user_email']
+                    ]
+                ],
+            ]
+        ]
+    ] ) ]
     function create( $input, $output = [] ){
 
         if( !$this->canCreate() ) {

@@ -7,6 +7,14 @@ class registered_meta_keys {
         @class-document-link https://developer.wordpress.org/reference/functions/register_meta/
     */
     static function build( array $meta_keys, string $action, string $meta_object_type ) : array {
+        
+        /**
+            Remove items without schemas 
+        */
+        $meta_keys = array_filter(
+            array: $meta_keys,
+            callback: fn( $item ) => $item['description']['schema'] ?? false
+        );
 
         $properties = array_map(
             array: $meta_keys,
