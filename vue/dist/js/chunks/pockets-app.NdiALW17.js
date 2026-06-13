@@ -1,1 +1,0 @@
-import{q as e}from"./floating-vue.C0YPAX_q.js";var t=Object.assign({inheritAttrs:!1},{__name:`index`,setup(t){return(t,n)=>e(t.$slots,`default`)}});export{t as default};

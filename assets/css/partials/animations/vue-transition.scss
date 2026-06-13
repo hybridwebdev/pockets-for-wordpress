@@ -1,0 +1,55 @@
+@use "sass:meta";
+ 
+@mixin vue-transition($args...) {
+  
+    $selectors: map-get(meta.keywords($args), selectors);
+    $suffix:  map-get(meta.keywords($args), suffix);
+    
+    @each $selector in $selectors {
+
+        .#{$selector}-enter-active#{$suffix},
+        .#{$selector}-leave-active#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), active ) {
+                #{$property}: $value;
+            }
+        }
+
+        .#{$selector}-enter-active#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), enter-active ) {
+                #{$property}: $value;
+            }
+        }
+
+        .#{$selector}-leave-active#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), leave-active ) {
+                #{$property}: $value;
+            }
+        }
+
+        .#{$selector}-enter-from#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), enter-from ) {
+                #{$property}: $value;
+            }
+        }
+
+        .#{$selector}-enter-to#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), enter-to ) {
+                #{$property}: $value;
+            }
+        }
+
+        .#{$selector}-leave-from#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), leave-from ) {
+                #{$property}: $value;
+            }
+        }
+
+        .#{$selector}-leave-to#{$suffix} {
+            @each $property, $value in map-get(meta.keywords($args), leave-to ) {
+                #{$property}: $value;
+            }
+        }
+     
+    }
+    
+}

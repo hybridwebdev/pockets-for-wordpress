@@ -1,1 +1,0 @@
-import{E as e,Z as t,_t as n,lt as r,q as i}from"./floating-vue.C0YPAX_q.js";var a=e({inheritAttrs:!1,__name:`provide-state`,setup(e){let a=r({...t()});return(e,t)=>i(e.$slots,`default`,{state:n(a)})}});export{a as default};

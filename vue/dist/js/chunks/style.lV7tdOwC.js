@@ -1,1 +1,0 @@
-import{t as e}from"./base.DBx0h2v3.js";var t=[{text:`None`,value:void 0},...[`normal`,`italic`,`oblique`,`initial`,`inherit`].map(e=>({text:e,value:e}))],n={extends:e,setup:e.setup,props:{options:{default:t}}};export{n as default};

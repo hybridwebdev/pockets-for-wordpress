@@ -1,1 +1,0 @@
-import{W as e}from"./floating-vue.C0YPAX_q.js";import{t}from"./inject-strict.QDOm0acR.js";var n=Symbol(`pockets-ux-drawer-api`),r={inject:{drawerApi:e=>t(n,e)},provide:{drawerApi:(...t)=>e(n,...t)}};export{r as t};

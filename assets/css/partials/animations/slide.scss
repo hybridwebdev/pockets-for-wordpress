@@ -1,0 +1,50 @@
+ 
+@mixin animate-slide(
+  $selectors,
+  $to: -100%,
+  $from: 100%,
+  $axis: X,
+  $collapse: 1fr,
+  $expand: 1fr,
+) {
+
+  $transform-from: if($axis == X, "translateX(#{$from})", "translateY(#{$from})");
+  $transform-to: if($axis == X, "translateX(#{$to})", "translateY(#{$to})");
+
+  @include vue-transition(
+    $selectors: $selectors,
+    $active: (
+      transition: (
+        transform var(--animate-duration) ease-in-out,
+        grid-template-rows var(--grid-duration, var(--animate-duration)) ease-in-out,
+        grid-template-columns var(--grid-duration, var(--animate-duration)) ease-in-out
+      ),
+    ),
+    $enter-from: (
+      transform: #{$transform-from},
+      grid-template-rows: var(--grid-collapse, #{$collapse}),
+      grid-template-columns: var(--grid-collapse, #{$collapse}),
+    ),
+    $enter-to: (
+      grid-template-rows: var(--grid-expand, #{$expand}),
+      grid-template-columns: var(--grid-expand, #{$expand}),
+    ),
+    $leave-from: (
+      grid-template-rows: var(--grid-expand, #{$expand}),
+      grid-template-columns: var(--grid-expand, #{$expand}),
+    ),
+    $leave-to: (
+      transform: #{$transform-to},
+      grid-template-rows: var(--grid-collapse, #{$collapse}),
+      grid-template-columns: var(--grid-collapse, #{$collapse}),
+    )
+  );
+}
+
+@include animate-slide( "slide-left", -100%, 100% );
+@include animate-slide( "slide-right", 100%, -100% );
+
+@include animate-slide( "slide-up", -100%, 100%, Y );
+@include animate-slide( "slide-down", 100%, -100%, Y );
+
+ 

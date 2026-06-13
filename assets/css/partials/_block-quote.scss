@@ -1,0 +1,21 @@
+blockquote {
+    padding: 10px;
+    --font-size: 4rem;
+    position: relative;
+    &:before {
+        content: '“';
+        font-size: var(--font-size); 
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    > p {
+        display: inline;
+    }
+    &::after {
+        content: '”';
+        font-size: var(--font-size);
+        right: 0;
+        position: absolute; 
+    } 
+}

@@ -1,0 +1,61 @@
+
+@mixin scrollbar-vars($vars) {
+  @each $key, $value in $vars {
+    --scrollbar-#{$key}: #{$value};
+    --scrollbar-hovered-#{$key}: #{$value};
+  }
+}
+ 
+@mixin scrollbar-hover($vars) {
+  &:hover {
+    @each $key, $value in $vars {
+      --scrollbar-#{$key}: var(--scrollbar-hovered-#{$key});
+    }
+  }
+}
+ 
+@mixin nice-scrollbar($vars) {
+
+    @include scrollbar-vars($vars);
+    scrollbar-gutter: auto;
+
+    scrollbar-width: var(--scrollbar-width);
+    scrollbar-height: var(--scrollbar-height);
+
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+
+    &::-webkit-scrollbar {
+        width: var(--scrollbar-width-px);
+        height: var(--scrollbar-height-px);
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb);
+        border-radius: var(--scrollbar-thumb-radius);
+        border: 2px solid transparent;
+        background-clip: content-box;
+    }
+    
+    @include scrollbar-hover($vars);
+
+}
+ 
+.fancy-scroll {
+
+  @include nice-scrollbar( (
+    width: thin,
+    width-px: 0px,
+    height-px: 0px,
+    height: thin,
+    thumb: transparent,
+    track: transparent,
+    thumb-radius: 0px
+  ) );
+
+  --scrollbar-hovered-thumb: var(--bs-grey-md);
+
+}
