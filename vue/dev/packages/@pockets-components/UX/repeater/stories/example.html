@@ -1,0 +1,8 @@
+<pockets-ux-repeater
+    v-bind="props"
+    @repeater:event="( event ) => $pockets.toast.info(`Repeater event: ${event}`)"
+>
+    <template #item="{ item }">
+        <input v-model="item.test" class="form-control">
+    </template>
+</pockets-ux-repeater>

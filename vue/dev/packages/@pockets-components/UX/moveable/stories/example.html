@@ -1,0 +1,23 @@
+<div 
+    :ref="e => props.container = e"
+    class="movable-window bg-white"
+>
+    <div 
+        :ref="e => props.handle = e"
+        class="col-12 bg-primary-dk p-1 handle"
+        role='button'
+    >Handle</div>
+    <div class="p-1 text-black fw-8 fs-16">
+        You can resize this element or drag the handle to move it.
+    </div>
+</div>
+<pockets-ux-movable 
+    v-if="props.container && props.handle"
+    :target='props.container' 
+    :dragTarget='props.handle' 
+    :draggable="true" 
+    :useResizeObserver='true'
+    :useMutationObserver='true'
+    :resizable='true'
+>
+</pockets-ux-movable>

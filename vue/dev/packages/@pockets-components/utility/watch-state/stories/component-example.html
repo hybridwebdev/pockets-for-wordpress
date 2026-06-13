@@ -1,0 +1,15 @@
+
+<div class='grid columns-1 gap-2'>
+
+    <button @click='props.count++' class='btn btn-grey-900 p-1 px-4 me-auto'> 
+        Click to increase count
+    </button>
+
+    <pockets-watch-state 
+        :callback='(newCount, oldCount) => $pockets.toast(`New Count is: ${newCount}, Old Count was: ${oldCount}`)' 
+        :source='props.count'
+    />
+
+    <pockets-ux-code-block :code='props' language='js'/>
+
+</div>
