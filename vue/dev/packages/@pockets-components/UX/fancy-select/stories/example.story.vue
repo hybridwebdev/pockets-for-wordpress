@@ -1,7 +1,7 @@
 ---
 tag: "pockets-fancy-select"
 route: "pockets vue/components/ux/fancy-select/example"
-component: "@pockets-components/ux/fancy-select/components/select.vue"
+component: "@pockets-components/UX/fancy-select/components/select.vue"
 ---
 <template>
 <pockets-story-demo-container

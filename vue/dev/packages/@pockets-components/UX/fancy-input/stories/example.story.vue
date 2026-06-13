@@ -1,7 +1,7 @@
 ---
 tag: "pockets-fancy-input"
 route: "pockets vue/components/ux/fancy-input/example"
-component: "@pockets-components/ux/fancy-input/index.vue"
+component: "@pockets-components/UX/fancy-input/index.vue"
 ---
 <template>
 <pockets-story-demo-container

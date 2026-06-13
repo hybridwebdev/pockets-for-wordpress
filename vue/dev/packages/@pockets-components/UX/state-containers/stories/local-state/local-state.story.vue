@@ -1,7 +1,7 @@
 ---
 route: 'pockets vue/components/ux/state-containers/local/example'
 tag: "pockets-local-state"
-component: "@pockets-components/ux/state-containers/components/provide-state.vue"
+component: "@pockets-components/UX/state-containers/components/provide-state.vue"
 ---
 <template>
 <pockets-story-demo-container

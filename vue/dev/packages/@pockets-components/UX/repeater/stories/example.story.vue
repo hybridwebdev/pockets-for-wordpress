@@ -1,7 +1,7 @@
 ---
 tag: 'pockets-ux-repeater'
 route: "pockets vue/components/ux/repeater/example"
-component: "@pockets-components/ux/repeater/loader/loader.vue"
+component: "@pockets-components/UX/repeater/loader/loader.vue"
 ---
 <template>
 <pockets-story-demo-container

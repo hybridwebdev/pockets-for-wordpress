@@ -1,7 +1,7 @@
 ---
 tag: "pockets-ux-json-editor"
 route: "pockets vue/components/ux/json-editor/example"
-component: '@pockets-components/ux/json-editor/loader.vue'
+component: '@pockets-components/UX/json-editor/loader.vue'
 ---
 <template>
 <pockets-story-demo-container>
