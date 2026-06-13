@@ -7,7 +7,7 @@ class module extends \pockets\base {
 
     function __construct() {
         add_action( 'rest_api_init', [ $this, 'register' ] ) ;
-        add_filter( 'vuejs-app/data', [ $this, 'extend_data' ], 9999999, 1 );
+        add_filter( 'pockets/vue/app.js/data', [ $this, 'extend_data' ], 9999999, 1 );
     }
 
     static function is_endpoint_url( string $url ) : bool {

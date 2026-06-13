@@ -185,7 +185,7 @@ class bootstrap_navwalker extends \Walker_Nav_Menu {
             if ( $container ) {
                 $output .= '</' . esc_attr( $container ) . '>';
             }
-            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $output is already very thoroughly excapped above
             echo $output;
         }
     }

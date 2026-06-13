@@ -12,12 +12,12 @@ class menu {
     } 
 
     static function before(){
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template
         echo \pockets::load_template( [ 'template' => 'pockets-plugin\admin-dashboard\header' ] );
     }
 
     static function after(){
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template
         echo \pockets::load_template( [ 'template' => 'pockets-plugin\admin-dashboard\footer' ] );
     }
 
@@ -32,31 +32,28 @@ class menu {
                 $message = $error['message'];
 
                 if( is_wp_error($message) ) {
-                    // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
+                    // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
                     printf(
-                        <<<T
+                        <<<HTML
                             <div class='alert alert-primary-dk m-0'>
                                 %s
                             </div>
-                        T,
-                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                        $message->get_error_message()
+                        HTML,
+                        wp_kses_post( $message->get_error_message() )
                     );
                 }
 
                 if( is_array($message) ) {
                     array_map(
-                        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
+                        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
                         fn( $k, $v ) => printf(
-                            <<<T
+                            <<<HTML
                                 <div class='alert alert-primary-dk m-0'>
                                     <b>%s</b> - %s
                                 </div>
-                            T, 
-                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                            $k, 
-                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                            $v
+                            HTML, 
+                            wp_kses_post($k), 
+                            wp_kses_post($v)
                         ),
                         array_keys($message),
                         array_values($message),
@@ -82,10 +79,14 @@ class menu {
             'manage_options',
             'pockets',
             function(){
+                
                 $this->before();
-                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template
                     echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-dashboard/welcome' ] );
+
                 $this->after();
+
             }, 
         );
  
@@ -98,14 +99,19 @@ class menu {
             function(){
 
                 $this->before();
-                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template
                     echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-dashboard/settings-form-open' ] );
+                    
                     do_action('pockets/admin/render-plugin-settings');
-                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template
                     echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-dashboard/settings-form-close' ] );
 
                 $this->after();
+
             }, 
+            
         );
 
     }

@@ -1,5 +1,4 @@
 <?php
-// phpcs:ignoreFile
 namespace pockets\utils;
 class register_taxonomy {
 

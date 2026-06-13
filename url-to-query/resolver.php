@@ -152,7 +152,7 @@ class resolver {
         Parse the url to be resolved taking only relative part and stripping out query vars.
     */
     private function parseUrl( string $url = '', array $query_string_vars = [] ) {
-        // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
+        // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url -- parse_url is perfectly valid as it's consisten in later versions of php including 8 which this plugin requires
         parse_str( parse_url( $url ?? "", PHP_URL_QUERY ) ?? "", $this->query_string );
         // phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
         $request_uri = trim( parse_url( $url, PHP_URL_PATH ) ?? "", '/' );

@@ -11,7 +11,6 @@ $template = $this->read_resource([
 ?>
 <div class='loop-item'>
     <?php 
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo $template['title'] 
+        echo esc_html( $template['title'] )
     ?>
 </div>

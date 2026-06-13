@@ -22,28 +22,28 @@ trait templates {
 
         $url = \pockets\crud\end_point\module::url();
         
-        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
-        $vue = <<<'_'
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- uses no external values
+        $vue = <<<'JS'
         let response = await $pockets.crud("{model}").init({init}).{action}({args});
-        _;
+        JS;
 
-        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
-        $php = <<<_
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- uses no external values
+        $php = <<<PHP
         <?php \pockets::crud("{model}")::init({init})->{action}({args});
-        _;
+        PHP;
 
-        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
-        $rest = <<<_
-        let responses = await axios.post( "{url}", [ {
-            model: "{model}",
-            init: {init},
-            action: "{action}",
-            input: {input},
-            output: {output},
-        } ] )
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- uses no external values
+        $rest = <<<JS
+            let responses = await axios.post( "{url}", [ {
+                model: "{model}",
+                init: {init},
+                action: "{action}",
+                input: {input},
+                output: {output},
+            } ] )
 
-        responses.forEach( response => ... )
-        _;
+            responses.forEach( response => console.log( response ) )
+        JS;
         
         return [
             'vue'  => strtr( $vue, $data['vue'] ?? [] ),

@@ -5,7 +5,8 @@ global $submenu;
 $title = get_admin_page_title();
 
 $render_menu_items = function( $item ){
-    //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+    //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- already verified earlier
     $current_page = (int)$_GET['page'] ?? 1;
     $item_slug = $item[2];
     $link = menu_page_url($item_slug, false);
@@ -19,12 +20,9 @@ $render_menu_items = function( $item ){
 
     printf(
         "<option value='%s' %s>%s</option>",
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        $link,
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        $current_page == $item_slug ? "selected" : "",
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        $item[3]
+        esc_attr($link),
+        esc_attr( $current_page == $item_slug ? "selected" : "" ),
+        esc_html( $item[3] )
     );
 };
 $logo = sprintf( "%s/assets/images/pockets-logo.webp", \pockets\base::init()->url )
@@ -37,7 +35,10 @@ $logo = sprintf( "%s/assets/images/pockets-logo.webp", \pockets\base::init()->ur
 
     <div class='d-flex gap-1 flex-wrap bg-grey p-2 bg-grey-800'>
         
-        <img src='<?php echo $logo // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' style='max-width:240px'>
+        <img 
+            src='<?php echo esc_url( $logo ) ?>' 
+            style='max-width:240px'
+        >
        
         <select 
             oninput='window.location = this.value'

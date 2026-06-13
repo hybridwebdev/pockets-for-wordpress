@@ -2,8 +2,6 @@
 
 namespace pockets\vue;
 
-use \pockets\crud\reducers\validator_reducer;
-
 #[\AllowDynamicProperties]
 class load_assets {
 	
@@ -14,26 +12,25 @@ class load_assets {
 		list(
 			'url' => $this->url,
 			'dir' => $this->dir,
-		) = apply_filters('pockets/vue-app/host-config', [
-			'dir' => plugin_dir_path(__DIR__ . "/vue/"),
-			'url' => plugin_dir_url(__DIR__ . "/vue/")
-		]);
+		) = apply_filters( 'pockets/vue-app/host-config', [
+			'dir' => sprintf( "%s/vue/", \pockets\base::init()->dir ),
+			'url' => sprintf( "%s/vue/", \pockets\base::init()->url )
+		] );
 
 		add_filter('script_loader_tag', function ($tag, $handle, $src) {
 
-			if ( in_array( needle: $handle, haystack: [ 'vuejs-app' ] ) ) {
-				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-				return '<script type="module" src="' . esc_url($src) . '"></script>';
+			if ( in_array( needle: $handle, haystack: [ 'pockets/vue/app.js' ] ) ) {
+				return sprintf('<script type="module" src="%s"></script>', esc_url( $src ) );
 			}
 
 			return $tag;
 
 		}, 10, 3);
 
-		add_action('init', [$this, 'initConfig']);
+		add_action( 'init', [ $this, 'initConfig' ] );
 
-		add_action('admin_footer', [$this, 'load_assets']);
-		add_action('wp_footer', [$this, 'load_assets']);
+		add_action( 'admin_footer', [ $this, 'load_assets' ] );
+		add_action( 'wp_footer', [ $this, 'load_assets' ] );
 
 	}
 
@@ -56,11 +53,11 @@ class load_assets {
 		$options = static::fallbackOptions();
 
 		if ( is_user_logged_in() ) {
-			$options = \pockets::crud('wp-user')::init(['by' => 'current_user'])->read([
+			$options = \pockets::crud('wp-user')::init( [ 'by' => 'current_user' ] )->read( [
 				'meta:<=' => [
 					'pockets-vue-app:<='
 				]
-			]);
+			] );
 		}
 
 		if ( is_wp_error( $options ) ) {
@@ -78,24 +75,22 @@ class load_assets {
 		];
 
 		$map = [
-			'host' => rtrim($options['host'] ?? static::fallbackOptions()['host'], '/'),
-			'build' => "{$this->url}/dist",
+			'host'  => rtrim( $options['host'] ?? static::fallbackOptions()['host'], '/' ),
+			'build' => sprintf( "%s/dist", $this->url ),
 		];
 
 		$this->vue_config['host'] = $map[$this->vue_config['mode']];
         
 	}
 
-	function load_config_file($path){
-		return json_decode(@file_get_contents($path), true);
+	function load_config_file( string $path ){
+		return json_decode( @file_get_contents( $path ), true );
 	}
  
-	function get_dev_assets(){
-
-		$host = rtrim($this->vue_config['host'], '/');
+	function get_dev_assets() : array {
 
 		return [
-			'app.js' => "{$host}/src/main.js",
+			'app.js' => sprintf( "%s/src/main.js", rtrim( $this->vue_config['host'], '/' ) ),
 			'app.css' => false
 		];
 
@@ -103,9 +98,9 @@ class load_assets {
  
 	function get_built_assets(){
 
-		$manifest = $this->load_config_file("{$this->dir}/dist/manifest.json");
+		$manifest = $this->load_config_file( sprintf( "%s/dist/manifest.json", $this->dir ) );
 
-		$host = rtrim($this->vue_config['host'], '/');
+		$host = rtrim( $this->vue_config['host'], '/' );
 
 		return [
 			'app.js' => ( $manifest['src/main.ts']['file'] ?? false )
@@ -125,7 +120,7 @@ class load_assets {
 			: $this->get_built_assets();
 
 		wp_enqueue_script(
-			'vuejs-app',
+			'pockets/vue/app.js',
 			$paths['app.js'],
 			apply_filters("pockets/vue/app.js/dependencies", []),
 			null,
@@ -133,13 +128,13 @@ class load_assets {
 		);
  
 		wp_localize_script(
-			'vuejs-app',
+			'pockets/vue/app.js',
 			'pocketsData',
-			apply_filters('vuejs-app/data', [])
+			apply_filters('pockets/vue/app.js/data', [])
 		);
 
 		if( $paths['app.css'] ) {
-			wp_enqueue_style( "vuejs-app-css", $paths['app.css'] );
+			wp_enqueue_style( "pockets/vue/app.css", $paths['app.css'] );
 		}
 
 	}

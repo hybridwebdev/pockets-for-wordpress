@@ -12,6 +12,6 @@ array_map(
             ]
         ]
     ] ),
-    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-    callback: fn($e) => print( is_wp_error( $e ) ? "" : $e['render'] )
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template content
+    callback: fn( $e ) => print( is_wp_error( $e ) ? "" : $e['render'] )
 ); 

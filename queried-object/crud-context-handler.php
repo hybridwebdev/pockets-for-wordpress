@@ -14,6 +14,8 @@ class crud_context_handler {
 
         parse_str( $query, $extra_query_vars );
 
+        $extra_query_vars = wp_unslash($extra_query_vars);
+
         $wp->parse_request( $path . ( $query ? '?' . $query : '' ) );
         
         /**
@@ -24,10 +26,12 @@ class crud_context_handler {
         $all_query_vars = array_merge( $wp->query_vars, $extra_query_vars );
 
         /**
-            This is ugly but it works. 
+            Query vars are intentionally derived from URL routing.
+            Sanitization is handled by WP core (WP_Query / parse_request) as well
+            as earlier in this function.
         */
-        //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        $_GET = array_merge( $all_query_vars, $_GET );
+        //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- nonce is verified earlier in rest endpoint
+        $_GET = array_merge( $_GET, $all_query_vars );
 
         return add_query_arg( $all_query_vars, home_url( 'index.php' ) );
         

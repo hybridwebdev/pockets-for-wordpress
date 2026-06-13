@@ -32,11 +32,11 @@ namespace {
         }
 
         /**
-            Used to add data to the vuejs-app/data filter which passees
+            Used to add data to the pockets/vue/app.js/data filter which passees
             data to javascript via wp_localize_script 
         */
         static function inject_data( string $key, mixed $data ) {
-            add_filter( "vuejs-app/data", fn( array $filtered ) : array => $filtered + [ $key => $data ] ); 
+            add_filter( "pockets/vue/app.js/data", fn( array $filtered ) : array => $filtered + [ $key => $data ] ); 
         }
 
         /**
@@ -57,7 +57,7 @@ namespace {
         }
 
         static function dump(mixed $data) {
-            // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+            // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- this is a helper function used for development
             var_dump("<pre>", $data, "</pre>");
         }
 

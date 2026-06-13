@@ -11,7 +11,7 @@ class module extends \pockets\base {
             hook_name: 'pockets/admin-bar/render/content', 
             callback: function(){
                 printf(
-                    // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed
+                    // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
                     <<<HTML
                         <pockets-local-state :open='false' #default='{state}' v-cloak >
                             <button 
@@ -38,7 +38,7 @@ class module extends \pockets\base {
                             </div>
                         </pockets-local-state>
                     HTML,
-                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- fully sanitized earlier
                     $this->render_documentation()
                 );
             }
@@ -57,7 +57,7 @@ class module extends \pockets\base {
             ]
         ]);
 
-        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
+        // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
         return sprintf(
 
             <<<HTML

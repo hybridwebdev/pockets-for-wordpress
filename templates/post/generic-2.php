@@ -12,9 +12,8 @@ $template = $this->read_resource([
 ?>
 <div class='loop-item generic-2'>
     <?php 
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo $template['title'];
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo esc_html($template['title']);
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier
         echo $template['content'];
     ?>
 </div>

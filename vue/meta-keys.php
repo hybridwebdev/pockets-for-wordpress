@@ -8,7 +8,6 @@ class meta_keys {
     function __construct(){
 		
 		add_action('pockets/admin/render-plugin-settings', function(){
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo \pockets::load_template([
 				'template' => 'pockets-plugin/admin-dashboard/vue-app-settings'
 			]);

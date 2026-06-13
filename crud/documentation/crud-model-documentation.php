@@ -81,7 +81,9 @@ class crud_model_documentation extends get_class_documentation {
         ob_start(); ?>
             <div class='grid columns-1 gap-2'>
                 <p>
-                    This is the <span class='text-primary-dk fw-8'><?php echo $model_name // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span> <b>CRUD</b> model. 
+                    This is the <span class='text-primary-dk fw-8'>
+                        <?php echo esc_html($model_name) ?>
+                        </span> <b>CRUD</b> model. 
                     It is responsible for getting and interacting with a resource.
                 </p>
                 <p>
@@ -101,18 +103,27 @@ class crud_model_documentation extends get_class_documentation {
                 </p>
                 <ul>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|create'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8 ' 
+                            link='<?php echo esc_attr($entry['name']) ?>|method|create'
+                        >
                             create
                         </class-document-link>
                         <p>Used to create a new resource.</p>
                     </li>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|read'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8 ' 
+                            link='<?php echo esc_attr($entry['name'])?>|method|read'
+                        >
                             read
                         </class-document-link>
                         <p>
                             Used to read data from a resource. This method looks at the 
-                            <class-document-link class='text-primary-lt fw-8' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|property|read_resource'>
+                            <class-document-link 
+                                class='text-primary-lt fw-8' 
+                                link='<?php echo esc_attr($entry['name'])?>|property|read_resource'
+                            >
                                 read_resource
                             </class-document-link> property on this class, which points to  
                             a class responsible for handling the read operation. The arguments are passed to this class, which 
@@ -120,12 +131,18 @@ class crud_model_documentation extends get_class_documentation {
                         </p>
                     </li>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|update'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8 ' 
+                            link='<?php echo esc_attr($entry['name'])?>|method|update'
+                        >
                             update
                         </class-document-link>
                         <p>
                             Used to update data on a resource. This method looks at the 
-                            <class-document-link class='text-primary-lt fw-8' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|property|update_resource'>
+                            <class-document-link 
+                                class='text-primary-lt fw-8' 
+                                link='<?php echo esc_attr($entry['name']) ?>|property|update_resource'
+                            >
                                 update_resource
                             </class-document-link> property on this class, which points to  
                             a class responsible for handling the update operation. The arguments are passed to this class, which 
@@ -133,7 +150,10 @@ class crud_model_documentation extends get_class_documentation {
                         </p>
                     </li>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|delete'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8' 
+                            link='<?php echo esc_attr($entry['name']) ?>|method|delete'
+                        >
                             delete
                         </class-document-link>
                         <p>
@@ -149,22 +169,34 @@ class crud_model_documentation extends get_class_documentation {
                 </p>
                 <ul>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|canCreate'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8 ' 
+                            link='<?php echo esc_attr($entry['name']) ?>|method|canCreate'
+                        >
                             canCreate
                         </class-document-link>
                     </li>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|canRead'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8' 
+                            link='<?php echo esc_attr($entry['name']) ?>|method|canRead'
+                        >
                             canRead
                         </class-document-link>
                     </li>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|canUpdate'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8 ' 
+                            link='<?php echo esc_attr($entry['name']) ?>|method|canUpdate'
+                        >
                             canUpdate
                         </class-document-link>
                     </li>
                     <li>
-                        <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|method|canDelete'>
+                        <class-document-link 
+                            class='text-primary-lt fw-8 ' 
+                            link='<?php echo esc_attr($entry['name'])?>|method|canDelete'
+                        >
                             canDelete
                         </class-document-link>
                     </li>
@@ -177,15 +209,25 @@ class crud_model_documentation extends get_class_documentation {
                     <li>
                         <span class='fw-8 text-primary-lt '>$model</span>
                         <p>
-                            The <class-document-link class='text-primary-lt fw-8 ' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|property|model_name'>model</class-document-link>
-                             the call is for. For this <b>CRUD</b> model it would be<span class='fw-8 text-primary-dk'> <?php echo $model_name // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?></span>.
+                            The <class-document-link 
+                                class='text-primary-lt fw-8 ' 
+                                link='<?php echo esc_attr($entry['name']) ?>|property|model_name'
+                            >
+                                model
+                            </class-document-link>
+                             the call is for. For this <b>CRUD</b> model it would be<span class='fw-8 text-primary-dk'> <?php echo esc_html($model_name) ?></span>.
                         </p>
                     </li>
                     <li>
                         <span class='fw-8 text-primary-lt '>$init</span>
                         <p>A single argument used to get the resource the action will be performed on.
                             This is handled by the 
-                            <class-document-link class='text-primary-lt fw-8' link='<?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>|property|get_resource'>get_resource</class-document-link> 
+                            <class-document-link 
+                                class='text-primary-lt fw-8' 
+                                link='<?php echo esc_attr($entry['name']) ?>|property|get_resource'
+                            >
+                                    get_resource
+                                </class-document-link> 
                             class that transforms the argument into a resource or an
                             <class-document-link class='text-primary-lt fw-8' link='pockets|method|error'>error</class-document-link>.
                         </p>
@@ -212,12 +254,12 @@ class crud_model_documentation extends get_class_documentation {
                     </li>
                 </ul>
                 <span class='fw-8'>Javascript</span>
-                <pockets-ux-code-block class='fw-4 fs-18' lang='javascript' code='<?php echo $example_code['vue'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <pockets-ux-code-block class='fw-4 fs-18' lang='javascript' code='<?php echo $example_code['vue'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>' />
                 <span class='fw-8'>PHP</span>
-                <pockets-ux-code-block class='fw-4 fs-18' lang='php' code='<?php echo $example_code['php'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <pockets-ux-code-block class='fw-4 fs-18' lang='php' code='<?php echo $example_code['php'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>' />
                 <span class='fw-8'>REST Request</span>
-                <?php echo $this->template_rest_help_text() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
-                <pockets-ux-code-block class='fw-4 fs-18' language='PHP' code='<?php echo $example_code['rest'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <?php echo $this->template_rest_help_text() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>
+                <pockets-ux-code-block class='fw-4 fs-18' language='PHP' code='<?php echo $example_code['rest'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>' />
                 
             </div>
         <?php return ob_get_clean(); 
@@ -259,16 +301,16 @@ class crud_model_documentation extends get_class_documentation {
                 <b>
                     In Javascript
                 </b>
-                <pockets-ux-code-block class='fw-4 fs-18' language='javascript' code='<?php echo $code['vue'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <pockets-ux-code-block class='fw-4 fs-18' language='javascript' code='<?php echo $code['vue'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>' />
                 <b>
                     In PHP
                 </b>
-                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['php'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['php'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --sanitized earlier ?>' />
                 <b>
                     REST Request
                 </b>
-                <?php echo $this->template_rest_help_text() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
-                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['rest'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <?php echo $this->template_rest_help_text() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>
+                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['rest'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>' />
             </div>
         <?php return $this->addTag( $entry, 'class-document-html', ob_get_clean() ); 
     }
@@ -327,30 +369,32 @@ class crud_model_documentation extends get_class_documentation {
                 <p>
                     This is the <b>CRUD</b> models
                     <span class='text-primary-lt fw-8'>
-                        <?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?> 
+                        <?php echo esc_html($entry['name']) ?> 
                     </span>
                     action.
                 </p>
                 <p>
                     It can be used server side, client side or as a <b>REST Request</b> to interact with a <b>CRUD</b> model resource. It takes the arguments
                     provided, and passes them to the 
-                    <class-document-link class='text-primary-lt fw-8' link='<?php echo $resource_property['link'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'>
-                        <?php echo $resource_property['text'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
+                    <class-document-link 
+                        class='text-primary-lt fw-8' 
+                        link='<?php echo esc_attr($resource_property['link']) ?>'>
+                        <?php echo wp_kses_post($resource_property['text']) ?>
                     </class-document-link> for handling, which returns the results.
                 </p>
                 <span class='fw-8'>
                     Javascript
                 </span>
-                <pockets-ux-code-block class='fw-4 fs-18' language='javascript' code='<?php echo $code['vue'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'/>
+                <pockets-ux-code-block class='fw-4 fs-18' language='javascript' code='<?php echo $code['vue'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier?>'/>
                 <span class='fw-8'>
                     PHP
                 </span>
-                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['php'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['php'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier?>' />
                 <b>
                     REST Request
                 </b>
-                <?php echo $this->template_rest_help_text() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['rest'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>' />
+                <?php echo $this->template_rest_help_text() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>
+                <pockets-ux-code-block class='fw-4 fs-18' language='php' code='<?php echo $code['rest'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?>' />
             </div>
         <?php return $this->addTag( $entry, 'class-document-html', ob_get_clean() ); 
     }
@@ -372,11 +416,13 @@ class crud_model_documentation extends get_class_documentation {
         ob_start(); ?>
             <p class='fw-6'>
                 This is the <b>CRUD</b> models 
-                <class-document-link class='text-primary-lt fw-8' link='<?php echo $link // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'>
-                    <?php echo $entry['name'] // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?> 
+                <class-document-link 
+                    class='text-primary-lt fw-8' 
+                    link='<?php echo esc_attr($link) ?>'>
+                    <?php echo esc_html($entry['name']) ?> 
                 </class-document-link>
                 class.
-                <?php echo $text // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
+                <?php echo wp_kses_post( $text ) ?>
             </p>
         <?php return $this->addTag( $entry, 'class-document-html', ob_get_clean() ); 
     }
@@ -400,11 +446,20 @@ class crud_model_documentation extends get_class_documentation {
         ob_start(); ?>
             <p>
                 This is a permission check. It is used to check if a user can perform this <b>CRUD</b> models 
-                <class-document-link class='text-primary-lt fw-8' link='<?php echo $link // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'>
-                    <?php echo $action // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?> 
+                <class-document-link 
+                    class='text-primary-lt fw-8' 
+                    link='<?php echo esc_attr($link) ?>'
+                >
+                    <?php echo esc_html($action) ?> 
                 </class-document-link>
                 action. It will return a <code>boolean</code> and if true, this <b>CRUD</b> models 
-                <class-document-link class='text-primary-lt fw-8' link='<?php echo $link // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>'><?php echo $action // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?></class-document-link> 
+                <class-document-link 
+                    class='text-primary-lt fw-8' 
+                    link='<?php echo esc_attr($link) ?>'
+                >
+
+                    <?php echo esc_html($action); ?>
+                </class-document-link> 
                 action will be performed.
             </p>
         <?php return $this->addTag( $entry, 'class-document-html', ob_get_clean() ); 

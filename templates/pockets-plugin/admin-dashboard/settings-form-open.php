@@ -11,14 +11,14 @@
 settings_fields( 'pockets' ); 
 
 if ( count( get_settings_errors() ) !=0 ) {
-    // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed
+    // phpcs:disable PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
     printf(
-        <<<T
+        <<<HTML
             <div class='grid columns-1 gap-1'>
             %s
             </div>
-        T, 
-        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        HTML, 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized in fn
         \pockets\admin\menu::print_settings_errors('pockets')
     );
 }
