@@ -1,7 +1,7 @@
 ---
 tag: "pockets-ux-color-picker"
 route: "pockets vue/components/ux/color-picker/example"
-component: "@pockets-components/ux/color-picker/index.vue"
+component: "@pockets-components/UX/color-picker/index.vue"
 ---
 <template>
 <pockets-story-demo-container
