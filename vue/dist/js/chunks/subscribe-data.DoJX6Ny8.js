@@ -1,1 +1,0 @@
-import{E as e,K as t,O as n,_t as r,ht as i}from"./floating-vue.nYGcrYfb.js";import{t as a}from"../pockets.hdEXKKJG.js";var o=e({inheritAttrs:!1,__name:`subscribe-data`,setup(e){return(e,o)=>t(e.$slots,`default`,r(n(i(a).data)))}});export{o as default};
