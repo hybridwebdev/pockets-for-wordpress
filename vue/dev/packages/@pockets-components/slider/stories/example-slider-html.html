@@ -1,0 +1,42 @@
+<p class='mb-1'>
+    If you use HTML slides, you must provide each slide a key or 
+    transitions will not work
+</p>
+<pockets-slider 
+    v-bind="props" 
+    :slides="false" 
+>   
+    <template #slides>
+        <img :src="props.slides[0].src" :key=0 class='col-12'>
+        <img :src="props.slides[1].src" :key=1 class='col-12'>
+        <img :src="props.slides[2].src" :key=2 class='col-12'>
+    </template>
+    <template #default="api">
+        <div
+            class="slide-container"
+        >
+            <pockets-slider-slide 
+                #default="slide" 
+                class="slide"
+            />
+        </div>
+        <div class='d-flex gap-1 justify-content-center p-2 pb-0'>
+            <button 
+                class='btn btn-accent-dk fa fa-chevron-left rounded-0 p-1'
+                @click='api.rotate.left()'
+            ></button>
+            <button 
+                v-for='(slide, i) in api.slides'
+                @click='api.rotate.to(i)'
+                :class='{active: i === api.index}'
+                class='btn btn-accent-dk p-1 rounded-0'
+            >
+                {{ i + 1 }}
+            </button>
+            <button 
+                class='btn btn-accent-dk fa fa-chevron-right rounded-0 p-1'
+                @click='api.rotate.right()'
+            ></button>
+        </div>
+    </template>
+</pockets-slider>

@@ -1,0 +1,19 @@
+<google-map-api-loader
+    v-bind='props.loaderOptions'
+>
+    <google-map-container
+        v-bind='props.mapOptions'
+    >
+        <google-map-advanced-marker
+            :position='{lat: 0, lng: 0}'
+            title='Hello world'
+        />
+        <google-map-advanced-marker
+            :position='{lat: 50, lng: 50}'
+        >
+            <div class='p-1 bg-black'>
+                Custom Marker Html            
+            </div>
+        </google-map-advanced-marker>
+    </google-map-container>
+</google-map-api-loader>

@@ -1,0 +1,55 @@
+<pockets-accordion 
+    v-bind="props.accordion"
+    :mode="props.mode"
+    :min-open="props.minOpen"
+    class="grid columns-1 gap-2 text-start"
+>
+    
+    <span>Using options set on accordion</span>
+
+    <pockets-accordion-item
+        ID="Example A"
+    >
+        <pockets-accordion-trigger
+            class="col-12 rounded-0 text-start"
+        >
+            Click Me
+        </pockets-accordion-trigger>
+        <pockets-accordion-content>
+            Content
+        </pockets-accordion-content>
+    </pockets-accordion-item>
+    
+    <span>Using options set on item</span>
+
+    <pockets-accordion-item 
+        ID="Example B" 
+        v-bind="props.options"
+    >
+        <pockets-accordion-trigger
+            class="col-12 rounded-0 text-start"
+        >
+            Click Me
+        </pockets-accordion-trigger>
+        <pockets-accordion-content >
+            I am content
+        </pockets-accordion-content>
+    </pockets-accordion-item>
+
+    <span>Using options set on trigger & content</span>
+
+    <pockets-accordion-item>
+        <pockets-accordion-trigger
+            :trigger-options="props.options.triggerOptions"
+            class="col-12 rounded-0 text-start"
+        >
+            Click Me
+        </pockets-accordion-trigger>
+        <pockets-accordion-content 
+            :content-options="props.options.contentOptions"
+        >
+            I am content
+        </pockets-accordion-content>
+    </pockets-accordion-item>
+
+</pockets-accordion>

@@ -1,0 +1,14 @@
+<div class='p-2 bg-grey-800'>
+    <button 
+        v-confirm-action='{
+            ...props.directive,
+            confirm: () => $pockets.toast.success("action confirmed"),
+            cancel:  () => $pockets.toast.error("action cancelled"),
+            start: () => $pockets.toast.info("start fired"),
+            reset: () => $pockets.toast.info("reset fired")
+        }'
+        class='btn px-6 py-1'
+    >
+        Click me
+    </button>
+</div>

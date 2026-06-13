@@ -1,0 +1,26 @@
+<div class="grid columns-1 gap-2">
+
+    <p class='m-0'>Instance one</p>
+
+    <pockets-global-state
+        #default="{ globalStateDemo: state }"
+    >
+        <pockets-ux-code-block :code='state'/>
+    </pockets-global-state>
+
+    <p>Instance Two</p>
+
+    <pockets-global-state
+        #default="{ globalStateDemo: state }"
+    >
+        <pockets-ux-code-block :code='state'/>
+        <label class='grid-info-120 bg-grey-800'>
+            <span class='p-2'>Foo</span>
+            <div class='p-1 bg-black'>
+
+                <input v-model="state.foo" class="form-control" placeholder='Enter text...'>
+            </div>
+        </label>
+    </pockets-global-state>
+
+</div>

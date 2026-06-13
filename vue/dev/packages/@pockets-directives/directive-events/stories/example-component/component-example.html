@@ -1,0 +1,21 @@
+<div class='p-4 text-white bg-grey-800 grid gap-2'>
+    <div 
+        :key='props.key'
+        v-directive-events="{
+            ...props,
+            mounted: () => $pockets.toast.info('Element was mounted'),
+            updated: () => $pockets.toast.info('Element was updated'),
+        }"
+    >
+        Watch for the toast events at the bottom of the screen
+    </div>
+    <div class='grid columns-2 gap-1 col-12'>
+        
+        <button @click='props.updated++' class='btn btn-confirm p-2'>
+            Click to trigger update
+        </button>
+        <button @click='props.key++' class='btn btn-warning p-2'>
+            Click to trigger remount
+        </button>
+    </div>
+</div>

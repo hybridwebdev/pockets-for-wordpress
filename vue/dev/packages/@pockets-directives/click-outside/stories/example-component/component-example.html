@@ -1,0 +1,14 @@
+<div 
+    class='text-white bg-grey-800' 
+    v-click-outside='() => props.outside = true'
+>
+    <div @click='props.outside=false' class='p-1 grid gap-2'>
+        <div class='grid-info-160 bg-grey-500'>
+            <span class='bg-grey-700 p-1'>
+                Clicked outside
+            </span>
+            {{props.outside}}
+        </div>
+        Click inside or outside of this element to see change.
+    </div>
+</div>

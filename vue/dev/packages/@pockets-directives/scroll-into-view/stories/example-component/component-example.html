@@ -1,0 +1,25 @@
+<div class='p-0 text-white bg-grey-800 grid gap-2 border border-5 border-grey-800'>
+    <div class='fancy-scroll grid columns-1 gap-0 scroll-container' 
+        style='overflow-y: auto; max-height: 200px'
+    >
+        <button 
+            v-for='(item, i) in props.list' 
+            v-scroll-into-view='{ enabled: i == props.active, ...props.options }'
+            class='btn p-1'
+            :class='{ "btn-grey-800" : i== props.active, "btn-grey-700": i!=props.active}'
+            @click='props.active = i'
+        >
+            {{item}}
+        </button>
+    </div>
+</div>
+
+<div class='grid columns-2 p-1 bg-grey-800 gap-1'>
+    <button 
+        v-for='i in [1, 6, 12, 18 ]' 
+        class='btn btn-grey-700'
+        @click='props.active = i'
+    >
+        Jump to Item {{i}}
+    </button>
+</div>
