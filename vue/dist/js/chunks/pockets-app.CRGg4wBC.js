@@ -1,0 +1,1 @@
+import{K as e}from"./floating-vue.Bi_ypWNW.js";var t=Object.assign({inheritAttrs:!1},{__name:`index`,setup(t){return(t,n)=>e(t.$slots,`default`)}});export{t as default};

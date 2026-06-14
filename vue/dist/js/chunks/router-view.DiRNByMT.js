@@ -1,0 +1,1 @@
+import{k as e}from"./floating-vue.Bi_ypWNW.js";import{d as t,t as n}from"./vue-router.tWwU9cZS.js";var r={setup(){return t(),()=>e(n,{},{default:({Component:t,route:n})=>{if(t)return e(t,{})}})}};export{r as default};

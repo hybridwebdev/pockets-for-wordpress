@@ -1,0 +1,1 @@
+import{E as e,K as t,X as n,ct as r,gt as i}from"./floating-vue.Bi_ypWNW.js";var a=e({inheritAttrs:!1,__name:`provide-state`,setup(e){let a=r({...n()});return(e,n)=>t(e.$slots,`default`,{state:i(a)})}});export{a as default};

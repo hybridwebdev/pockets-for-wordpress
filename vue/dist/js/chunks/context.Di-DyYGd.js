@@ -1,0 +1,1 @@
+import{U as e}from"./floating-vue.Bi_ypWNW.js";import{t}from"./inject-strict.BRhiTL00.js";var n=Symbol(`pockets-accordion-container`),r=Symbol(`pockets-accordion-ID`),i=Symbol(`pockets-accordion-config`),a={inject:{groupID:()=>t(r),container:()=>t(n),config:()=>t(i)},provide:{groupID:t=>e(r,t),container:(...t)=>e(n,...t),config:(...t)=>e(i,...t)}};export{a as t};

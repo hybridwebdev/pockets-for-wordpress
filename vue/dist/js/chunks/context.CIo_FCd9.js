@@ -1,0 +1,1 @@
+import{E as e,K as t,U as n}from"./floating-vue.Bi_ypWNW.js";import{d as r,s as i}from"./vue-router.tWwU9cZS.js";var a=e({__name:`index`,props:{linkActiveClass:{},linkInactiveClass:{},linkExactActiveClass:{},linkBase:{},routerID:{}},setup(e){let a=r(),o=e,s={...a.options,...o};return n(i,{...a,options:s}),(e,n)=>t(e.$slots,`default`)}});export{a as default};

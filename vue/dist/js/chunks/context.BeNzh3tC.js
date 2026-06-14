@@ -1,0 +1,1 @@
+import{U as e}from"./floating-vue.Bi_ypWNW.js";import{t}from"./inject-strict.BRhiTL00.js";var n=Symbol(`pockets-ux-slider`),r=Symbol(`pockets-ux-slider-slide-wrapper`),i={inject:{api:()=>t(n),slideWrapper:e=>t(r,e)},provide:{api:(...t)=>e(n,...t),slideWrapper:(...t)=>e(r,...t)}};export{i as t};
