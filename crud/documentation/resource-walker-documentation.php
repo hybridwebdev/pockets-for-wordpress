@@ -119,7 +119,7 @@ class resource_walker_documentation extends get_class_documentation {
         ob_start();?>
             <div class='grid columns-1 gap-2'>
                  <p>
-                    This class is responsible for handling the <b class='text-primary-lt'><?php echo $this->action // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?></b> operations of the <b>CRUD</b> model.
+                    This class is responsible for handling the <b class='text-primary-lt'><?php echo esc_html($this->action) ?></b> operations of the <b>CRUD</b> model.
 
                     It takes a single argument of an array, and iterates each entry. It uses the <b>key</b> portion of the array entry, and calls a method 
                     with the same name on this class. 

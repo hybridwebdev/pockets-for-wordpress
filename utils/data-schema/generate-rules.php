@@ -1,6 +1,5 @@
 <?php 
-// phpcs:ignoreFile 
-// because phpcs chokes on this file
+// phpcs:ignoreFile -- because phpcs chokes on this file
 
 namespace pockets\utils\data_schema;
 

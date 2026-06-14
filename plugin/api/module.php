@@ -57,7 +57,7 @@ namespace {
         }
 
         static function dump(mixed $data) {
-            // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- this is a helper function used for development
+            // phpcs:ignore WordPress.PHP.DevelopmentFunctions -- this is a helper function
             var_dump("<pre>", $data, "</pre>");
         }
 

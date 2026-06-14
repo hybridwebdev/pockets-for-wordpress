@@ -71,7 +71,10 @@ class get_resource_documentation extends get_class_documentation {
         ob_start(); ?>
             <div class='grid columns-1 gap-2'>
                 <p>
-                    This method handles setting up the resource for this crud model. It handles requests of type <code><?php echo $type // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- sanitized earlier ?></code>.
+                    This method handles setting up the resource for this crud model. It handles requests of type 
+                    <code>
+                        <?php echo esc_html($type ) ?>
+                    </code>.
                 </p>
                 <p>
                     See 
