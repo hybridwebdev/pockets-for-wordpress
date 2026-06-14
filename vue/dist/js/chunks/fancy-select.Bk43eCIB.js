@@ -1,1 +1,0 @@
-import{U as e}from"./floating-vue.nYGcrYfb.js";import{t}from"./inject-strict.UhDA0Fkp.js";var n=Symbol(`fancy-select`),r={inject:{api:()=>t(n)},provide:{api:(...t)=>e(n,...t)}};export{r as t};
