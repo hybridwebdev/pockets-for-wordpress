@@ -54,7 +54,7 @@ autoloader::register( plugin_dir_path( __FILE__ ), __NAMESPACE__ );
 
 /**
 	Binds at earliest priorty so that other plugins can register to load
-	after it.   
+	after it.    
 */
 add_action("plugins_loaded", function(){
 	plugin\module::init();
