@@ -1,0 +1,34 @@
+<div class='col-12'>
+    <pockets-slider 
+        v-bind="props" 
+        #default="api"
+    >
+        <div
+            class="slide-container"
+        >
+            <pockets-slider-slide #slide='slide'>
+                <div class='slide' >
+                    <img :src="slide.src"/>
+                </div>
+            </pockets-slider-slide>
+        </div>
+        <div class='d-flex gap-1 justify-content-center p-2 pb-0'>
+            <button 
+                class='btn btn-accent-dk fa fa-chevron-left rounded-0 p-1'
+                @click='api.rotate.left()'
+            ></button>
+            <button 
+                v-for='(slide, i) in api.slides'
+                @click='api.rotate.to(i)'
+                :class='{active: i === api.index}'
+                class='btn btn-accent-dk p-1 rounded-0'
+            >
+                {{ i + 1 }}
+            </button>
+            <button 
+                class='btn btn-accent-dk fa fa-chevron-right rounded-0 p-1'
+                @click='api.rotate.right()'
+            ></button>
+        </div>
+    </pockets-slider>
+</div>

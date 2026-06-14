@@ -1,0 +1,1 @@
+.pockets-accordion-content{grid-template-rows:0fr;transition:all .5s;display:grid!important}.pockets-accordion-content[open=true]{grid-template-rows:1fr}.pockets-accordion-content .pockets-accordion-content-inner{overflow:hidden}

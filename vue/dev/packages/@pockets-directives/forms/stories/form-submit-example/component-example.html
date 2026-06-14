@@ -1,0 +1,37 @@
+<form 
+    class='p-4 text-white bg-grey-800 grid gap-2' 
+    v-pockets-form-handler='{ 
+        submit: data => {
+            $pockets.toast.info( `${JSON.stringify(data)}`)
+        }
+    }'>
+
+    <label class='grid-info-cq-md-160 grid gap-1'>
+        <span>  
+            Favorite Color
+        </span>
+        <select 
+            name='favorite-color' 
+            class='form-control' 
+            :value='props.color' 
+            v-pockets-form-submit="{
+                events: ['change']
+            }"
+        >
+            <option v-for='option in ["blue", "red", "green"]'>
+                {{option}}
+            </option>
+        </select>
+    </label>
+
+    <div class='d-flex gap-1 flex-wrap'>
+        <div class='col-12'> 
+            Change the select to automatically submit the form
+        </div>
+        <button type='submit' class='btn btn-confirm px-4 ms-auto' disabled>
+            Submit Form
+        </button>
+
+    </div>
+
+</form>

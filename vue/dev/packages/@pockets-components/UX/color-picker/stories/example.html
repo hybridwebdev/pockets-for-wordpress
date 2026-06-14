@@ -1,0 +1,12 @@
+<div class="grid columns-2 gap-2">
+    <span 
+        class=" p-2 bg-white"
+        :style="{ color: props.modelValue ?? '#000' }"
+    >
+        HELLO WORLD
+    </span>
+    <pockets-ux-color-picker
+        v-bind="props"
+        v-model="props.modelValue"
+    />
+</div>

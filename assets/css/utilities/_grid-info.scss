@@ -1,0 +1,75 @@
+ 
+$sizes: 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300;
+
+$grid-info-values: ();
+$grid-info-dislays: ();
+$grid-info-alignments: ();
+$grid-info-gaps: ();
+
+@each $size in $sizes {
+  
+  $grid-info-gaps: map-merge(
+    $grid-info-gaps,
+    (
+      #{$size}: 20px
+    )
+  );
+
+  $grid-info-alignments: map-merge(
+    $grid-info-alignments,
+    (
+      #{$size}: center
+    )
+  );
+
+  $grid-info-dislays: map-merge(
+    $grid-info-dislays,
+    (
+      #{$size}: grid
+    )
+  );
+
+  $grid-info-values: map-merge(
+    $grid-info-values,
+    (
+      #{$size}: #{$size}px 1fr
+    )
+  );
+
+}
+ 
+$utilities: map-merge(
+
+  (
+
+    "grid-info:sizing": (
+      responsive: true,
+      property: grid-template-columns,
+      class: grid-info,
+      values: $grid-info-values
+    ),
+    
+    "grid-info:displays": (
+      responsive: true,
+      property: display,
+      class: grid-info,
+      values: $grid-info-dislays
+    ),
+
+    "grid-info:alignments": (
+      responsive: true,
+      property: align-items,
+      class: grid-info,
+      values: $grid-info-alignments,
+    ),
+
+    "grid-info:gaps": (
+      responsive: true,
+      property: gap,
+      class: grid-info,
+      values:$grid-info-gaps
+    ),
+    
+  ),
+  $utilities
+);

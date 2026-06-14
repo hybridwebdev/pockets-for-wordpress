@@ -1,0 +1,13 @@
+<google-map-api-loader
+    v-bind='props.loaderOptions'
+>
+    <div class='grid columns-1 gap-2'>
+        <google-map-auto-complete
+            class='form-control'
+            v-model='props.modelValue'
+        />
+        <div>
+            Address selected: {{ props?.modelValue?.formatted_address ?? "None selected"}}
+        </div>
+    </div>
+</google-map-api-loader>

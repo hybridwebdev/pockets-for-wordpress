@@ -1,0 +1,97 @@
+
+@mixin cq-breakpoint-up( $name, $breakpoints ) {
+  
+  $min: map-get( $breakpoints, $name );
+
+  @if $min != 0 {
+    @container (min-width: #{$min}) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+
+} 
+  
+@mixin apply-container-queries-to-utilities( $prefix, $breakpoints, $utilities ){
+  
+  @each $breakpoint in map-keys( $breakpoints ) {
+
+    @include cq-breakpoint-up( $breakpoint, $breakpoints ) {
+
+      @each $key, $utility in $utilities {
+
+        $bp: if( $breakpoint == none, "", "-#{$breakpoint}" );
+
+        $_prefix: if( $key == 'cq-container-type', "", $prefix );
+
+        @if map-get( $utility, responsive ) {
+
+          @include generate-utility( $utility, "#{$_prefix}#{$bp}");
+        
+        }
+         
+      }
+
+    }
+
+  }
+
+}
+
+@mixin apply-container-queries-to-grid( $prefix, $breakpoints ){
+
+  @each $breakpoint in map-keys( $breakpoints ) {
+
+    @include cq-breakpoint-up( $breakpoint, $breakpoints ) {
+
+      $bp: if( $breakpoint == none, "", "-#{$breakpoint}" );
+
+      @for $i from 1 through $grid-columns {
+        
+        .g-col#{$prefix}#{$bp}-#{$i} {
+          grid-column: auto / span $i;
+        }
+
+        .col#{$prefix}#{$bp}-#{$i} {
+          flex: 0 0 auto;
+          width: percentage($i / $grid-columns);
+        }
+
+      }
+      
+      .g-col#{$prefix}#{$bp}-auto {
+        grid-column: auto
+      }
+
+      .col#{$prefix}#{$bp} {
+        flex: 1 0 0%;
+      }
+
+      .col#{$prefix}#{$bp}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+    }
+
+  }
+
+}
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "cq-container-type": (  
+      responsive: true,
+      property: container-type,
+      class: cq,
+      values: (
+        null: inline-size
+      )
+    ),
+  )
+);
+
+@include apply-container-queries-to-utilities( "-cq", $grid-breakpoints, $utilities );
+@include apply-container-queries-to-grid( "-cq", $grid-breakpoints );

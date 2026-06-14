@@ -1,0 +1,36 @@
+name: Clear History
+
+on:
+  workflow_dispatch: # Allows you to run this manually with a button
+
+jobs:
+  nuke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Allows pushing the updated commit history
+      actions: write  # The correct syntax to manage workflow permissions
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reset History and Force Push
+        run: |
+          # Configure Git credentials
+          git config user.name "hybridwebdev"
+          git config user.email "7633708+hybridwebdev@users.noreply.github.com"
+          
+          # Create an isolated, history-free branch
+          git checkout --orphan temp_branch
+          
+          # Stage and commit all existing files
+          git add -A
+          git commit -m "Initial commit"
+          
+          # Overwrite the main branch locally
+          git branch -M main
+          
+          # Force push to overwrite the remote repository history
+          git push origin main --force

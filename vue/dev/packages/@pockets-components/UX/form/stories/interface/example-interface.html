@@ -1,0 +1,65 @@
+<pockets-form-container 
+    v-bind='props'
+    class='p-1 text-white grid columns-1 gap-1 loading-container overflow-hidden'
+>   
+    <pockets-form-validation
+        path='form-container'
+        tag='div'
+        class='grid columns-1 gap-1'
+    >
+    </pockets-form-validation>
+     
+    <pockets-form-validation
+        path='name'
+        tag='div'
+        class='grid-info-160 gap-1'
+        wrapper-class='g-col-2'
+    >
+        <span>Name</span>
+        <pockets-form-input 
+            class='form-control rounded-0 border border-5'
+            path='name'
+            placeholder='Name...'
+        >
+        </pockets-form-input>
+    </pockets-form-validation>
+
+    <pockets-form-validation
+        path='email'
+        tag='div'
+        class='grid-info-160 gap-1'
+        wrapper-class='g-col-2'
+    >
+        <span>Email</span>
+        <pockets-form-input 
+            class='form-control rounded-0 border border-5'
+            path='email'
+            placeholder='Email...'
+        >
+        </pockets-form-input>
+    </pockets-form-validation>
+
+    <pockets-form-validation
+        path='confirm.email'
+        tag='div'
+        class='grid-info-160 gap-1'
+        wrapper-class='g-col-2'
+    >
+        <span>Confirm Email</span>
+        <pockets-form-input 
+            class='form-control rounded-0 border border-5'
+            path='confirm.email'
+            placeholder='Email...'
+        >
+        </pockets-form-input>
+    </pockets-form-validation>
+     
+    <pockets-form-input
+        tag='button'
+        type='submit'
+        class='btn btn-confirm rounded-0 p-2'
+    >
+        Submit
+    </pockets-form-input>
+    
+</pockets-form-container>

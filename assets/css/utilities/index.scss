@@ -1,0 +1,141 @@
+
+$utilities: map-merge(
+  $utilities, 
+  (
+  "container-type": (
+    property: container-type,
+    class: container-type,
+    responsive: true, 
+    values: ( 
+      'inline': inline-size,
+    ),
+  ),
+
+  "opacity": (
+    property: opacity,
+    class: opacity,
+    state: hover,
+    values: ( 
+      100: 1,
+      75: .75,
+      50: .5,
+      25: .25,
+      10: .1,
+      0: 0
+    ),
+  ),
+    
+  "grid-area": (
+    responsive: true,
+    property: (
+      grid-column-start,
+      grid-row-start
+    ),
+    class: grid-area,
+    values: (
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      none: unset
+    )
+  ),
+
+  "columns": (
+    property: columns,
+    class: columns,
+    css-var: true,
+    responsive: true, 
+    values: $grid-template-columns,
+  ),
+
+  "max-width": (
+    property: max-width,
+    class: max-width,
+    responsive: true, 
+    values: $max-widths
+  ),
+
+  "min-width": (
+    property: min-width,
+    class: min-width,
+    responsive: true, 
+    /**
+      @todo change to seperate $min-widths variable
+    */
+    values: $max-widths
+  ),
+
+  "max-height": (
+    property: max-height,
+    class: max-height,
+    responsive: true, 
+    values: $max-heights
+  ),
+
+  "height": (
+    property: height,
+    class: height,
+    responsive: true, 
+    values: $heights
+  ),
+
+  "shadow": (
+    property: box-shadow,
+    class: shadow,
+    values: $shadows
+  ),
+
+  "font-weights": (
+    property: font-weight,
+    class: fw,
+    values: $font-weights
+  ),
+
+  "font-sizes": (
+    property: font-size,
+    class: fs,
+    values: $font-sizes,
+    responsive: true
+  ),
+
+  "line-heights": (
+    property: line-height,
+    class: lh,
+    values: $line-heights,
+    responsive: true
+  ),
+
+  "font-families": (
+    property: font-family,
+    class: ff,
+    values: $font-families,
+  ),
+
+  "letter-spacings": (
+    property: letter-spacing,
+    class: letter-spacing,
+    values: $letter-spacings
+  ),
+
+  "font-styled": (
+    property: font-style,
+    class: font-style,
+    values: $font-styles
+  ),
+  
+  "font-variant": (
+    property: font-variant,
+    class: font-variant,
+    values: $font-variants
+  ),
+  "text-alignments": (
+    property: text-alignment,
+    class: text,
+    values: $text-aligntments,
+  ),
+  
+));
+
+@import "./grid-info"; 

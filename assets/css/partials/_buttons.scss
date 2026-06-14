@@ -1,0 +1,13 @@
+.btn {
+    &.fa-regular,
+    &.fa-solid,
+    &.fa {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+}

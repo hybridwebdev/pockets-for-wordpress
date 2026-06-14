@@ -1,0 +1,26 @@
+
+<pockets-drawer class='gap-1 grid cq'>
+
+    <pockets-drawer-panel direction='vertical'>
+        <div style='overflow: hidden; grid-template-columns: 1fr; display: grid'>
+            <div class='p-4 bg-grey-800 text-white'>
+                Hello world, I open veritcally
+            </div>
+        </div>
+    </pockets-drawer-panel>
+
+    <pockets-drawer-panel style='--expand: 100cqw; --collapse: 0cqw'>
+        <div style='overflow: hidden; grid-template-columns: var(--expand); display: grid'>
+            <div class='p-4 bg-grey-800 text-white'>
+                Hello world, I open horizontally
+            </div>
+        </div>
+    </pockets-drawer-panel>
+    
+    <div class='d-flex justify-content-end'>
+        <pockets-drawer-trigger #default='{ drawer }' class='btn btn-grey-900 p-2'>
+            {{drawer.open ? "Close" : "Open" }} Drawer
+        </pockets-drawer-trigger>
+    </div>
+
+</pockets-drawer>

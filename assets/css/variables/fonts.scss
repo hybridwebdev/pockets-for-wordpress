@@ -1,0 +1,52 @@
+
+$font-family-base: "Lato", sans-serif;
+
+$font-families: (
+    "lobster": unquote("'Lobster', sans-serif"),
+    "lato": unquote( "'Lato', sans-serif" )
+); 
+
+$font-weights: (
+  1: 100,
+  2: 200,
+  3: 300,
+  4: 400,
+  5: 500,
+  6: 600,
+  7: 700,
+  8: 800
+);
+
+$font-sizes: ();
+$line-heights: ();
+
+@for $i from 5 through 24 {
+  $font-sizes: map-merge( $font-sizes, ( $i * 2: $i * 2px ) );
+  $line-heights: map-merge( $line-heights, ( $i * 2 : $i * 2px ) );
+}
+
+
+$letter-spacings: (
+  'normal': 'normal'
+);
+
+@for $i from 0 through 16 {
+  $letter-spacings: map-merge( $letter-spacings, ( $i * 1 : $i * 1px ) );
+}
+
+$font-styles: (
+  "italic": italic,
+  "oblique": oblique,
+  "normal": normal
+);
+
+$font-variants: (
+  "small-caps": small-caps,
+  "normal": "normal"
+);
+
+$text-aligntments: (
+  "start" : start,
+  "center": center,
+  "end": end
+);

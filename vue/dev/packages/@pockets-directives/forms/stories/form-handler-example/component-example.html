@@ -1,0 +1,58 @@
+<form 
+    class='p-4 text-white bg-grey-800 grid gap-2' 
+    v-pockets-form-handler='{ 
+        submit: data => {
+            $pockets.toast.info( `${JSON.stringify(data)}`)
+        }
+    }'>
+    
+    <label class='grid-info-cq-md-160 grid gap-1'>
+        <span>  
+            Enter Name
+        </span>
+        <input name='name' class='form-control' :value='props.name'>
+    </label>
+
+    <label class='grid-info-cq-md-160 grid gap-1'>
+        <span>  
+            Favorite Food
+        </span>
+        <input name='favorite-food' class='form-control' :value='props.food'>
+    </label>
+
+    <label class='grid-info-cq-md-160 grid gap-1'>
+        <span>  
+            Favorite Color
+        </span>
+        <select name='favorite-color' class='form-control' :value='props.color'>
+            <option v-for='option in ["blue", "red", "green"]'>
+                {{option}}
+            </option>
+        </select>
+    </label>
+
+    <label class='grid-info-cq-md-160 grid gap-1'>
+        
+        <span>  
+            Do you like Coding?
+        </span>
+
+        <input 
+            class='form-control-switch fs-36 ms-auto'  
+            type='checkbox' 
+            v-model='props.likesCoding'
+        >
+
+        <input :value='props.likesCoding ? "yes" : "no"' name='likes-coding' hidden>
+
+    </label>
+
+    <div class='d-flex'>
+
+        <button type='submit' class='btn btn-confirm px-4 ms-auto'>
+            Submit Form
+        </button>
+
+    </div>
+
+</form>

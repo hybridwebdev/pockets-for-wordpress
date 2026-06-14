@@ -1,0 +1,18 @@
+
+@mixin transitionDisplay( $attribute: 'open', $value: 'true', $duration: 500ms, $timing: ease-out ) {
+
+    transition: opacity $duration $timing, display $duration allow-discrete;
+    opacity: 0;
+    display: none;
+
+    &[#{$attribute}='#{$value}'] {
+
+        @starting-style {
+            opacity: 0;
+        }
+
+        display: block;
+        opacity: 1;
+    }
+
+}

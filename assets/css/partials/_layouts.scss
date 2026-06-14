@@ -1,0 +1,98 @@
+@use "sass:math";
+
+.grid-card-4 {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: 1fr 1fr 1fr auto;
+    grid-template-rows: subgrid; 
+}
+
+.grid-card-3 {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: subgrid;
+}
+
+.grid-card-2 {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: 1fr auto;
+    grid-template-rows: subgrid;
+}
+
+@mixin container-fluid-one-side( 
+  $prefix: "col", 
+  $suffix: "fill",
+  $breakpoints: $grid-breakpoints,
+) {
+  
+  @each $breakpoint, $container-max-width in $breakpoints {
+
+    @media( min-width: $container-max-width) {
+
+      .#{$prefix}-#{$breakpoint}-#{$suffix}-start {
+        flex: 1;
+        margin-left: calc( ( ( 100% - 100vw ) / 2 ) );
+        margin-right: auto;
+      }
+
+      .#{$prefix}-#{$breakpoint}-#{$suffix}-end {
+        flex: 1;
+        margin-right: calc( ( ( 100% - 100vw ) / 2 ) );
+        margin-left: auto;
+      }
+
+    }
+
+  }
+
+}
+
+@include container-fluid-one-side();
+
+@mixin container-max-widths(
+  $breakpoints: $grid-breakpoints,
+  $gutter-width: $grid-gutter-width
+) {
+  @each $breakpoint, $container-max-width in $breakpoints {
+    @media (min-width: $container-max-width) {
+
+      .container-#{$breakpoint}-half {
+        max-width: math.div($container-max-width, 2) - math.div($gutter-width, 2)
+      }
+
+    }
+  }
+}
+
+@include container-max-widths(); 
+
+
+
+
+
+
+
+
+
+
+
+@function generate-ray(
+  $breakpoints: $grid-breakpoints,
+  $gutter-width: $grid-gutter-width,
+  $ray: ()
+) {
+
+  @each $breakpoint, $container-max-width in $breakpoints {
+    $ray: map-merge($ray, (
+      container-#{$breakpoint}-half: math.div($container-max-width, 2) - math.div($gutter-width, 2),
+      $breakpoint: $container-max-width
+    ) );
+  }
+  @return $ray;
+}
+
+$max-widths: generate-ray();
+
+//@debug $max-widths;
