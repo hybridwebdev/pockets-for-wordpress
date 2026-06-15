@@ -8,20 +8,13 @@
 
     <h2 class="fs-18 text-primary-dk fw-8">Stay Updated</h2>
 
-    <p class="fs-18">Stay in the loop with the latest developments in Pockets:</p>
+    <p class="fs-18">Need Assistance?</p>
 
     <ul>
-        <li><strong class="fs-18 text-primary-dk fw-8">Blog:</strong> Explore our blog for in-depth articles, tutorials, and announcements.</li>
-        <li><strong class="fs-18 text-primary-dk fw-8">Newsletter:</strong> Subscribe to our newsletter for exclusive content and early access to new features.</li>
+        <li><strong class="fs-18 text-primary-dk fw-8">Blog:</strong> Visit our <a href='https://hybridwebdev.com/blog/'>blog</a> for articles, tutorials, and announcements.</li>
+        <li><strong class="fs-18 text-primary-dk fw-8">Documentation: </strong>Find comprehensive guides, interactive demos and in depth information in our <a href='https://hybridwebdev.com/pockets-documentation/'>documentation</a>.</li>
     </ul>
-
-    <h2 class="fs-18 text-primary-dk fw-8">Need Assistance?</h2>
 
     <p class="fs-18">Whether you're a seasoned user or just getting started, we're here to help:</p>
-
-    <ul>
-        <li><strong class="fs-18 text-primary-dk fw-8">Documentation: </strong>Find comprehensive guides and step-by-step tutorials in our documentation.</li>
-        <li><strong class="fs-18 text-primary-dk fw-8">Github: </strong>Visit our github page to report a bug, file an issue or get assistance from our community of developers and users.</li>
-    </ul>
 
 </div>
