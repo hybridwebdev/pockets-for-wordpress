@@ -1,6 +1,6 @@
 <?php   
 /*  
- * Plugin Name: Pockets Core Development Tools
+ * Plugin Name: Pockets Core Development Tools 
  * Description: A powerful site development framework for wordpress. 
  * Version:     0.99 
  * Author:      Hybrid Web Dev
