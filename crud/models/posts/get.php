@@ -1,6 +1,8 @@
 <?php
 namespace pockets\crud\models\posts;
 
+defined('ABSPATH') || exit;
+
 /**
     Transforms requests into an instance of \WP_Query
     @class-document-link https://developer.wordpress.org/reference/classes/wp_query/ for more information

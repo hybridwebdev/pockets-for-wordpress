@@ -4,6 +4,8 @@
     Template Type: post-loop/pagination
 */
 
+defined('ABSPATH') || exit;
+
 $pagination = $this->read_resource([
     'pagination_links:<='
 ]);

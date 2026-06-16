@@ -1,3 +1,8 @@
+<?php 
+
+defined('ABSPATH') || exit;
+
+?>
 <div class='grid gap-1 columns-1'>
 
     <h1 class="fs-24 text-accent-dk fw-8 mb-2">Thank you for choosing Pockets</h1>

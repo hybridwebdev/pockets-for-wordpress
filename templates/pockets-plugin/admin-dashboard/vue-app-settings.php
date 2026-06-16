@@ -1,5 +1,7 @@
 <?php
-    
+
+defined('ABSPATH') || exit;
+
     $render = \pockets\admin\render_helpers::init();
 
     $options = \pockets::crud('wp-user')::init( [ 'by' => 'current_user' ] )->read( [

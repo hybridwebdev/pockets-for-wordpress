@@ -4,6 +4,8 @@
     Template Type: post-loop
 */
 
+defined('ABSPATH') || exit;
+
 array_map(
     array: $this->read_resource( [
         'items:<=' => [

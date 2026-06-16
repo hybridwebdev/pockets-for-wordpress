@@ -1,5 +1,7 @@
 <?php 
 
+defined('ABSPATH') || exit;
+
     $options = \pockets::crud('wp-options')::init()->read( [
         'pockets/updater:<='
     ] );

@@ -11,6 +11,8 @@
  */ 
 namespace pockets;
 
+defined('ABSPATH') || exit;
+
 #[\AllowDynamicProperties]
 class base {
 

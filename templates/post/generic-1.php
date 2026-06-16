@@ -4,6 +4,8 @@
 * Template Type: post
 */
 
+defined('ABSPATH') || exit;
+
 $template = $this->read_resource([
     'title'
 ]); 

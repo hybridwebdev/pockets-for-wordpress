@@ -8,14 +8,27 @@ License: GPLv2 or later
 
 Modern WordPress development without the boilerplate.
 
-Pockets is a developer framework for WordPress that provides a powerful CRUD API, a real-time query builder, VUE integration, reusable components and various other tools to help you build any kind of WordPress application/site faster.
+Pockets is a comprehensive development toolkit for WordPress that helps you build applications, websites, dashboards, and custom solutions faster while staying within the WordPress ecosystem.
 
-Instead of scattering things like `WP_Query`, `get_post_meta()`, `wp_insert_post()`, and custom REST endpoints throughout your codebase, Pockets gives you a consistent developer experience for working with WordPress data.
+At the core of Pockets is a powerful data layer inspired by GraphQL. Query exactly the data you need, traverse relationships, and perform CRUD operations through a consistent API that works everywhere: server-side PHP, client-side JavaScript, and WordPress REST endpoints.
 
-Pockets exists to make WordPress development feel less like managing a collection of APIs and more like building applications.
+Instead of juggling WP_Query, get_post_meta(), custom REST routes, and repetitive CRUD logic, Pockets provides a unified developer experience for working with WordPress data.
+
+Key features include:
+
+- GraphQL-inspired query and CRUD API
+- Works in PHP, JavaScript, and REST endpoints
+- Real-time query builder for designing and testing queries
+- Seamless Vue integration. Use VUE with one simple element. No configuration required.
+- Ready-to-use Vue components
+- Reduced boilerplate for common WordPress development tasks
+
+Whether you're building a traditional WordPress website, a headless application, an admin dashboard, or a complex business platform, Pockets provides the tools needed to build faster while staying fully compatible with WordPress.
+
+Pockets exists to make WordPress development feel less like managing a collection of APIs and more like building modern applications.
 
 Write less boilerplate. Build faster. Stay in WordPress.
-
+ 
 == External services ==
 
 This plugin uses 3rd party placeholder content from  placeholdit.com. This is purely for demo's in the documentation system and is not

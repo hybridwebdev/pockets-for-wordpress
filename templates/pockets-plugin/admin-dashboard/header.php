@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit;
+
 global $submenu;
 
 $title = get_admin_page_title();

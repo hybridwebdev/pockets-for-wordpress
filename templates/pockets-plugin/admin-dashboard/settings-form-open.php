@@ -1,4 +1,7 @@
- <form 
+<?php
+defined('ABSPATH') || exit;
+?>
+<form 
     method="post" 
     action="options.php" 
     class='grid gap-4 columns-1' 

@@ -4,6 +4,8 @@
 * Template Type: term
 */
 
+defined('ABSPATH') || exit;
+
 $template = $this->read_resource([
     'name',
     'link'

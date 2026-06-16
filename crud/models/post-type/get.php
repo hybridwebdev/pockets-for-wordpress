@@ -1,5 +1,6 @@
 <?php
 namespace pockets\crud\models\post_type;
+defined('ABSPATH') || exit;
 
 /**
     Takes request and turns it into instance of an instance of Wp_Post_Type or Wp_Error

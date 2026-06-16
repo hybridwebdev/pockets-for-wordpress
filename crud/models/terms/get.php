@@ -1,6 +1,8 @@
 <?php
 namespace pockets\crud\models\terms;
 
+defined('ABSPATH') || exit;
+
 /**
     @see https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
     @class-document-link WP_Term_Query
