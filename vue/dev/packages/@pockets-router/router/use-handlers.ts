@@ -8,6 +8,12 @@ export let useHandlers = ( { router } ) => {
             return
         }
 
+        let preventRouter = target.closest('[prevent-pockets-router-link="true"]')
+
+        if (preventRouter) {
+            return
+        }
+
         // let routerContainer = target.closest('[router-id]')
         
         // console.log(routerContainer)
