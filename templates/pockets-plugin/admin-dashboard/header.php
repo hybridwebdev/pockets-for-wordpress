@@ -5,28 +5,31 @@ defined('ABSPATH') || exit;
 global $submenu;
 
 $title = get_admin_page_title();
-
 $render_menu_items = function( $item ){
 
-    //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- already verified earlier
-    $current_page = (int)$_GET['page'] ?? 1;
+    $current_page = isset($_GET['page']) ? sanitize_key($_GET['page']) : '';
+
     $item_slug = $item[2];
-    $link = menu_page_url($item_slug, false);
+
     if (
         strpos( $item_slug, 'edit.php' ) !== false 
         ||
         strpos( $item_slug, 'edit-tags.php' ) !== false 
     ) {
         $link = admin_url( $item_slug );
-    } 
+    } else {
+        $link = menu_page_url($item_slug, false);
+    }
 
     printf(
         "<option value='%s' %s>%s</option>",
         esc_attr($link),
-        esc_attr( $current_page == $item_slug ? "selected" : "" ),
-        esc_html( $item[3] )
+        selected($current_page, $item_slug, false),
+        esc_html($item[3])
     );
+    
 };
+
 $logo = sprintf( "%s/assets/images/pockets-logo.webp", \pockets\base::init()->url )
 ?>
  
