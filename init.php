@@ -7,7 +7,7 @@
  * Author URI:  https://hybridwebdev.com   
  * License:     GPLv2 or later
  * Requires PHP: 8.0 
- * Requires at least: 6.0     
+ * Requires at least: 6.0      
  */ 
 namespace pockets;
 
