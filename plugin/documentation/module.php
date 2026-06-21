@@ -14,19 +14,20 @@ class module extends \pockets\base {
                 printf(
                     // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
                     <<<HTML
-                        <pockets-local-state :open='false' #default='{state}' v-cloak >
+                        <pockets-local-state :open='false' #default='{state}' v-cloak>
                             <button 
                                 @click='state.open = !state.open'
-                                class='btn btn-grey-800 p-0 border border-5 border-grey-md shadow-menu'
-                                style='z-index: 99'
-                                v-tooltip='{ content: !state.open ? "View Pockets Dashboard" : "Close Pockets Dashboard", position: "end" }'
+                                class='btn btn-grey-800 border border-2 border-grey-md shadow-menu p-1 py-half'
+                                style='z-index: 99; --bs-btn-active-bg: var(--bs-confirm)'
+                                v-tooltip='{ content: !state.open ? "View Pockets Dashboard" : "Close Pockets Dashboard", placement: "right" }'
+                                :class='{ active: state.open }'
                             >
                                 <i 
-                                    class='fa fa-book p-1 fs-20' 
+                                    class='fa fa-book' 
                                     v-if='!state.open' 
                                 ></i>
                                 <i 
-                                    class='fa fa-times p-1 fs-20' 
+                                    class='fa fa-times' 
                                     v-if='state.open' 
                                 ></i>
                             </button>

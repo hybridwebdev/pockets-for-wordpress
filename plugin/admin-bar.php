@@ -29,33 +29,36 @@ namespace pockets\plugin {
 
 					echo <<<'HTML'
 						<a 
-							class='btn-grey-800 fw-8 border border-5 border-grey-md shadow-menu p-0' 
-							v-tooltip='"Toggle WP Admin Toolbar"'
-							@click='$pockets.data.showAdminBar = !$pockets.data.showAdminBar'
+							class='btn btn-grey-800 fw-8 border border-2 border-grey-md shadow-menu p-1 py-half' 
+							v-tooltip='{ content: "Toggle WP Admin Toolbar", placement: "right" }'
+							@click='$pockets.data.wpAdmin.showBar = !$pockets.data.wpAdmin.showBar'
 							role='button'
+							:class='{ active: $pockets.data.wpAdmin.showBar }'
+							style='--bs-btn-active-bg: var(--bs-confirm)'
 						>
-							<i class='text-grey-md fa fa-bars p-1 bg-grey-800 fs-20 text-white '></i>
+							<i class='fa fa-bars'></i>
 						</a>
 						<a 
-							class='btn-grey-800 fw-8 border border-5 border-grey-md shadow-menu p-0' 
+							class='btn btn-grey-800 fw-8 border border-2 border-grey-md shadow-menu p-1 py-half' 
 							href='/wp-admin' 
-							v-tooltip='"WP Admin Dashboard"'
+							v-tooltip='{ content: "WP Admin Dashboard", placement: "right" }'
 						>
-							<i class='text-grey-md fas fa-dashboard p-1 bg-grey-800 fs-20 text-white '></i>
+							<i class='fas fa-dashboard'></i>
 						</a>
 					HTML;
 
 				}
-			);
-			
-			$show = is_admin() ? true : false; 
 
-			\pockets::inject_data('showAdminBar', $show );
+			);
+
+			\pockets::inject_data( 'wpAdmin', [
+				'showBar' =>  is_admin() ? true : false
+			] );
 
 			add_action( 'wp_before_admin_bar_render', function() {
 				echo <<<'HTML'
 					<pockets-app v-cloak>
-						<div v-show='$pockets.data.showAdminBar == 1'>
+						<div v-show='$pockets.data.wpAdmin.showBar == 1'>
 				HTML;
 			}, 20);
 
@@ -64,20 +67,6 @@ namespace pockets\plugin {
 						</div>
 					</pockets-app>
 				HTML;
-			});
-
-			add_action('wp_head', function () {
-				echo <<<STYLE
-					<style>
-						#wpadminbar {
-							z-index: 9999999 !important;
-						}
-
-						html {
-							margin: 0 !important;
-						}
-					</style>
-				STYLE;
 			});
 
         }
