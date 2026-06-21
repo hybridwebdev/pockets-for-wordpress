@@ -18,6 +18,7 @@ namespace pockets\plugin {
 			
 			add_action(
             	hook_name: 'pockets/admin-bar/render/content', 
+				priority: 1,
             	callback: function(){
 					
 					if( !current_user_can('administrator') ) {
@@ -46,12 +47,14 @@ namespace pockets\plugin {
 
 				}
 			);
+			
+			$show = is_admin() ? true : false; 
 
-			\pockets::inject_data('showAdminBar', false );
+			\pockets::inject_data('showAdminBar', $show );
 
 			add_action( 'wp_before_admin_bar_render', function() {
 				echo <<<'HTML'
-					<pockets-app>
+					<pockets-app v-cloak>
 						<div v-show='$pockets.data.showAdminBar == 1'>
 				HTML;
 			}, 20);

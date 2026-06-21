@@ -9,6 +9,7 @@ class module extends \pockets\base {
                     
         add_action(
             hook_name: 'pockets/admin-bar/render/content', 
+            priority: 1000,
             callback: function(){
                 printf(
                     // phpcs:ignore PluginCheck.CodeAnalysis.Heredoc.NotAllowed -- fully sanitized
@@ -18,16 +19,15 @@ class module extends \pockets\base {
                                 @click='state.open = !state.open'
                                 class='btn btn-grey-800 p-0 border border-5 border-grey-md shadow-menu'
                                 style='z-index: 99'
+                                v-tooltip='{ content: !state.open ? "View Pockets Dashboard" : "Close Pockets Dashboard", position: "end" }'
                             >
                                 <i 
                                     class='fa fa-book p-1 fs-20' 
                                     v-if='!state.open' 
-                                    v-tooltip='"View Pockets Dashboard"'
                                 ></i>
                                 <i 
                                     class='fa fa-times p-1 fs-20' 
                                     v-if='state.open' 
-                                    v-tooltip='"Close Pockets Dashboard"'
                                 ></i>
                             </button>
                             <div 
