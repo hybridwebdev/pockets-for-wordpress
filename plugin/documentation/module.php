@@ -16,18 +16,18 @@ class module extends \pockets\base {
                         <pockets-local-state :open='false' #default='{state}' v-cloak >
                             <button 
                                 @click='state.open = !state.open'
-                                class='btn btn-grey-800 p-0 border border-5 border-grey-md fs-24 shadow-menu'
+                                class='btn btn-grey-800 p-0 border border-5 border-grey-md shadow-menu'
                                 style='z-index: 99'
                             >
                                 <i 
-                                    class='fa fa-book p-1' 
+                                    class='fa fa-book p-1 fs-20' 
                                     v-if='!state.open' 
-                                    v-tooltip='"View Dashboard"'
+                                    v-tooltip='"View Pockets Dashboard"'
                                 ></i>
                                 <i 
-                                    class='fa fa-times p-1' 
+                                    class='fa fa-times p-1 fs-20' 
                                     v-if='state.open' 
-                                    v-tooltip='"Close Dashboard"'
+                                    v-tooltip='"Close Pockets Dashboard"'
                                 ></i>
                             </button>
                             <div 

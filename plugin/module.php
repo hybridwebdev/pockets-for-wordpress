@@ -44,14 +44,8 @@ namespace pockets\plugin {
 
 			\pockets\plugin\documentation\module::init();
 			
-			
-			add_action('wp_footer', function(){
-				if(  current_user_can('administrator') ) {
-					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- renders template
-					echo \pockets::load_template( [ 'template' => 'pockets-plugin/admin-bar/loader' ] );
-				}
-			}, 5 );
-			
+			admin_bar::init();
+
 		}
 		
 		function load_base_assets(){
