@@ -40,11 +40,11 @@ namespace pockets\plugin {
 			\pockets\crud\module::init();
 			\pockets\vue\module::init();
 			\pockets\queried_object\module::init();
-			\pockets\admin\menu::init();
+			
+			\pockets\admin\module::init();
 
 			\pockets\plugin\documentation\module::init();
 			
-			admin_bar::init();
 
 		}
 		
