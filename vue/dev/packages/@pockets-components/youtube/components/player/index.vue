@@ -181,6 +181,18 @@ let currentInstance = getCurrentInstance()
 
 let fullscreenRef = computed(() => {
 
+     if (typeof props.containerRef === 'string') {
+
+        if (props.containerRef.startsWith('.') || props.containerRef.startsWith('#')) {
+
+            const el = currentInstance?.proxy?.$el as HTMLElement
+
+            return el?.closest(props.containerRef) ?? el
+
+        }
+
+    }
+    
     if( props.containerRef=='container' ) {
         return containerRef.value
     }

@@ -56,6 +56,6 @@ export type playerVars = {
         If set to parent, it will use the components parent element.
         You can also pass in a reference to an element.
     */
-    containerRef?: 'container' | 'parent' | Ref<HTMLElement | null>
+    containerRef?: string | 'container' | 'parent' | Ref<HTMLElement | null>
     
 }
